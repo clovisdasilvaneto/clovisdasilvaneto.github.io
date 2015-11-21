@@ -1,0 +1,235 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Clóvis Neto | Front End Engineer</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  	<link rel="canonical" href="http://clovisdasilvaneto.github.io" />
+  	<link rel="publisher" href="https://plus.google.com/u/0/107923948578708069647/posts"/>
+  	<meta property="og:locale" content="pt_BR" />
+  	<meta property="og:type" content="My blog and projects" />
+  	<meta property="og:title" content="Clóvis Neto" />
+  	<meta property="og:description" content="I love JS and CSS3 ;)" />
+  	<meta property="og:url" content="http://clovisdasilvaneto.github.io" />
+  	<meta property="og:site_name" content="Clóvis Neto" />
+  	<meta property="og:image" content="http://clovisdasilvaneto.github.io/img/clovis-neto.png" />
+  	<meta property="og:image:type" content="image/png">
+  	<meta name="twitter:card" content="summary_large_image"/>
+  	<meta name="twitter:title" content="Clóvis Neto - Front End Engineer"/>
+  	<meta name="twitter:site" content="@Clovissneto"/>
+  	<meta name="twitter:domain" content="Clóvis Neto"/>
+  	<meta name="twitter:image:src" content="http://clovisdasilvaneto.github.io/img/clovis-neto.png"/>
+  
+  	<link href="/css/prism.css" rel="stylesheet" />
+  	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,300' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="/css/github-repository.css">
+  	<link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+  	<nav id="menubar" class="flip-top">
+  		<ul class="container">
+  			<li><a href="/index.html">Home</a></li>
+  			<li><a href="/about">About</a></li>
+  			<li><a href="/blog">Blog</a></li>
+  			<li><a href="/projects">Projects</a></li>
+  			<li><a href="/talk-and-cases">Talk and Cases</a></li>
+  			<li class="socials"><a target="_blank" href="https://codepen.io/clovisneto/"><i class="fa fa-codepen"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://github.com/clovisdasilvaneto"><i class="fa fa-github"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://twitter.com/Clovissneto"><i class="fa fa-twitter"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://www.facebook.com/ClovisDaSilvaNeto"><i class="fa fa-facebook"></i></a></li>
+  		</ul>
+  
+  
+  		<label for="menu-mobile" class="mobile">
+  			<span></span>
+  			<span></span>
+  			<span></span>
+  
+  			<select id="menu-mobile">
+  				<option value="/index.html">Home</option>
+  				<option value="/about">About</option>
+  				<option value="/blog">Blog</option>
+  				<option value="/projects">Projects</option>
+  				<option value="/talk-and-cases">Talk and Cases</option>
+  				<option value="#" selected>Voltar</option>
+  			</select>
+  		</label>
+  	</nav>
+
+<header class="wrapper">
+	<div class="container">
+		<time datetime="June 11, 2015">June 11, 2015</time>
+		<h1>Explorando o javascript. filter, forEach, map, reduce, every e some</h1>
+		<h2>Agora sim JS e um pouco de código! E para começar, nada melhor que estudar o core da nossa linda linguagem javascript</h2>
+	</div>
+</header>
+
+<section class="container">
+	<article>
+	    <b>Tags:</b>
+	           <a href="/tags/javascript.html" class="code" title="Posts sobre javascript">javascript</a>
+
+	           <a href="/tags/core.html" class="code" title="Posts sobre core">core</a>
+		
+		<br>
+		<br>
+
+	    <p><h2 id="o-problema-">O Problema...</h2></p>
+<p>Se você atua à algum tempo na área, já pode ter passado por uma situação onde você precisa iterar um array só para verificar se existe alguma propriedade em um determinado indice, ou então somar alguma propriedade do mesmo.</p>
+<p><em>E ai? Qual seria a forma mais peformática de se execultar tal tarefa?</em> </p>
+<h2 id="o-foreach">O forEach</h2>
+<p>O método forEach é bastante parecido com o for antigo, básicamente faz o mesmo que ele, mas numa forma bem mais elegante, vejamos abaixo um exemplo de uma iteração num determinado array usando o for e outra iteração usando forEach</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> users <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&#39;clóvis&#39;</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> active<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&#39;silva&#39;</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> active<span class="token punctuation">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&#39;neto&#39;</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> active<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> users<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>users<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//olha que diferença...</span>
+users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<div class="note">
+    <em>Tudo que é mais simples, acaba sendo mais interessante de se usar no dia-a-dia ;)</em>
+</div>
+
+<p>Conhecendo este jeito lindo e simples de se trabalhar com o for (falo &#39;for&#39; me referindo a forEach), vários dev&#39;s estagnados não se perguntam se existem ainda uma melhor forma de iterar um array para cada situação especifica, e outras séries de operações do array são simplesmente ignoradas por eles. Infelizmente este é o cenário atual que acontece aqui no Brasil :&#39;( , mas vamos continuar o post...</p>
+<h2 id="filtrando-o-array-com-o-b-filter-b-">Filtrando o array com o <b>filter<b></b></b></h2><b><b>
+<p>Imagine o seguinte array: </p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> users <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&#39;clóvis&#39;</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> active<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&#39;silva&#39;</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> active<span class="token punctuation">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&#39;neto&#39;</span><span class="token punctuation">,</span> id<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> active<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>Agora pense, que você queira trazer apenas os objetos que tenham como propriedade o <span class="code-note">active:true</span>, como os dev&#39;s de agências desatualizados fariam? (nada contra)</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//repara no começo de um hadouken</span>
+users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>active<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        data<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Sempre que me deparo com situações assim, imagino duas respostas, rs</p>
+<p>- Dev. desatualizado:</p>
+<p>&quot;Maan, beleza... você conseguiu terminar o seu projeto, se preocupa com isso não pow, TÁ RODANDO shaushua.&quot;</p>
+<p>- Dev. de verdade:</p>
+<p>&quot;Tem como fazer melhor!...&quot;</p>
+<p>Vejamos com o filter como ficaria:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">// cade o hadouken??</span>
+users <span class="token operator">=</span> users<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> user<span class="token punctuation">.</span>active<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>O método filter() cria um novo array com todos os elementos que passaram ao teste, no nosso caso o user que contém a propriedade <span class="code-note">active</span>.</p>
+<h2 id="every">Every</h2>
+<p>O método every, testa todo os elementos da array passam no teste executado pela função em que fornecemos. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> monthlyPayment <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;jan&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;fev&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;mar&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;abr&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;mai&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    payments<span class="token punctuation">;</span>
+
+payments <span class="token operator">=</span> monthlyPayment<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>month<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> month<span class="token punctuation">.</span>payday
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//payments == true ;)</span>
+</code></pre>
+<h2 id="some">Some</h2>
+<p>O método some faz basicamente o mesmo que o every, a única diferença é que ele testa se algum elemento do array passa no teste executado pela função que foi fornecida... Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> monthlyPayment <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;jan&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;fev&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;mar&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;abr&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>month<span class="token punctuation">:</span> <span class="token string">&#39;mai&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    payments<span class="token punctuation">;</span>
+
+payments <span class="token operator">=</span> monthlyPayment<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>month<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> month<span class="token punctuation">.</span>payday
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//payments == true ;)</span>
+</code></pre>
+<h2 id="map">Map</h2>
+<p>Através do map, podemos criar um novo array, derivando-se do array atual. </p>
+<p>Imagine que seu chefe lhe trouxe um punhado cheio jóias e bijuterias (&quot;ah jura?&quot;) e lhe pediu para você retirar apenas as jóias de ouro e guardar numa caixa. 
+O método map faz exatamente isto, ele pecorre o array, trazendo apenas o valor retornado. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> monthlyPayment <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;jan&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;fev&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;mar&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;abr&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;mai&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    months<span class="token punctuation">;</span>
+
+months <span class="token operator">=</span> monthlyPayment<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>month<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> month<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//months == [&#39;jan&#39;, &#39;fev&#39;, &#39;mar&#39;, &#39;abr&#39;, &#39;maio&#39;])</span>
+</code></pre>
+<h2 id="reduce">Reduce</h2>
+<p>Podemos criar uma acumulação de valores no array utilizando o método reduce. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> monthlyPayment <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;jan&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token number">1400</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;fev&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;mar&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token number">1300</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;abr&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&#39;mai&#39;</span><span class="token punctuation">,</span> payday<span class="token punctuation">:</span> <span class="token number">800</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    result<span class="token punctuation">;</span>
+
+result <span class="token operator">=</span> monthlyPayment<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>currentSum<span class="token punctuation">,</span> currentMonth<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> currentSum <span class="token operator">+</span> currentMonth<span class="token punctuation">.</span>payday<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//result == 4000)</span>
+</code></pre>
+<div class="note">note que após o fechamento da função, colocamos um &#39;0&#39; para que o primeiro valor seja igual à 0. Logo quando entrarmos no primeiro loop, do método reduce, o currentSum será igual à 0, e nos loops seguinte o currentSum será a soma dos dias pagos(&#39;payday&#39;).</div>
+
+
+<p>Um bom material para podermos estudar o core da linguagem é a documentação da MDN, apartir deste conteúdo, você pode estar se aprofundando mais na linguagem javascript, segue abaixo:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Clica aqui :p</a></p>
+<h2 id="conclus-o">Conclusão</h2>
+<p>É muuuiito importante ficar ligado nestes métodos e nos que virão, pois a partir deles deixamos nosso código limpo, fácil de entender e bastante peformático.</p>
+<p> <em>Obrigado e até o próximo post \o/</em></p>
+
+	</article>
+	  <footer>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES * * */
+	        var disqus_shortname = 'clovisnetoblog';
+	        
+	        /* * * DON'T EDIT BELOW THIS LINE * * */
+	        (function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
+	    </script>
+	    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	    </footer>
+</section>
+
+	<script src="/js/prism.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>

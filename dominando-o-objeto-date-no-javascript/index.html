@@ -1,0 +1,201 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Clóvis Neto | Front End Engineer</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  	<link rel="canonical" href="http://clovisdasilvaneto.github.io" />
+  	<link rel="publisher" href="https://plus.google.com/u/0/107923948578708069647/posts"/>
+  	<meta property="og:locale" content="pt_BR" />
+  	<meta property="og:type" content="My blog and projects" />
+  	<meta property="og:title" content="Clóvis Neto" />
+  	<meta property="og:description" content="I love JS and CSS3 ;)" />
+  	<meta property="og:url" content="http://clovisdasilvaneto.github.io" />
+  	<meta property="og:site_name" content="Clóvis Neto" />
+  	<meta property="og:image" content="http://clovisdasilvaneto.github.io/img/clovis-neto.png" />
+  	<meta property="og:image:type" content="image/png">
+  	<meta name="twitter:card" content="summary_large_image"/>
+  	<meta name="twitter:title" content="Clóvis Neto - Front End Engineer"/>
+  	<meta name="twitter:site" content="@Clovissneto"/>
+  	<meta name="twitter:domain" content="Clóvis Neto"/>
+  	<meta name="twitter:image:src" content="http://clovisdasilvaneto.github.io/img/clovis-neto.png"/>
+  
+  	<link href="/css/prism.css" rel="stylesheet" />
+  	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,300' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="/css/github-repository.css">
+  	<link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+  	<nav id="menubar" class="flip-top">
+  		<ul class="container">
+  			<li><a href="/index.html">Home</a></li>
+  			<li><a href="/about">About</a></li>
+  			<li><a href="/blog">Blog</a></li>
+  			<li><a href="/projects">Projects</a></li>
+  			<li><a href="/talk-and-cases">Talk and Cases</a></li>
+  			<li class="socials"><a target="_blank" href="https://codepen.io/clovisneto/"><i class="fa fa-codepen"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://github.com/clovisdasilvaneto"><i class="fa fa-github"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://twitter.com/Clovissneto"><i class="fa fa-twitter"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://www.facebook.com/ClovisDaSilvaNeto"><i class="fa fa-facebook"></i></a></li>
+  		</ul>
+  
+  
+  		<label for="menu-mobile" class="mobile">
+  			<span></span>
+  			<span></span>
+  			<span></span>
+  
+  			<select id="menu-mobile">
+  				<option value="/index.html">Home</option>
+  				<option value="/about">About</option>
+  				<option value="/blog">Blog</option>
+  				<option value="/projects">Projects</option>
+  				<option value="/talk-and-cases">Talk and Cases</option>
+  				<option value="#" selected>Voltar</option>
+  			</select>
+  		</label>
+  	</nav>
+
+<header class="wrapper">
+	<div class="container">
+		<time datetime="June 13, 2015">June 13, 2015</time>
+		<h1>Dominando o objeto date no javascript</h1>
+		<h2>Faaaala galera, hoje trouxe novamente um post sobre js e desta vez o assunto principal é o objeto Date.</h2>
+	</div>
+</header>
+
+<section class="container">
+	<article>
+	    <b>Tags:</b>
+	           <a href="/tags/javascript.html" class="code" title="Posts sobre javascript">javascript</a>
+
+	           <a href="/tags/core.html" class="code" title="Posts sobre core">core</a>
+
+	           <a href="/tags/date.html" class="code" title="Posts sobre date">date</a>
+		
+		<br>
+		<br>
+
+	    <p><h2 id="um-pouco-de-hist-ria">Um pouco de história</h2></p>
+<p><img src="/img/objeto-date.jpg" alt=""></p>
+<p>O objeto date é representado pela quantidade de milisegundos desde o início da <b>Era Unix</b></p>
+<p>A <b>Era Unix</b> (Unix Epoch), ou Posix Time, teve início no dia <b>1 de janeiro de 1970 às 00:00:00</b> do Tempo Universal Coordenado, mais conhecido como UTC, referência a partir de onde se calculam os fusos horários do mundo inteiro.</p>
+<p>Podemos obter a data atual, a partir da função construtora de Date, sem parâmetros. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Sat Jun 13 2015 14:41:41 GMT-0300 (Hora oficial do Brasil)</span>
+</code></pre>
+<p>Para observar a representação em milisegundos, desde à Era Unix até a variável today, escrevemos à seguinte propriedade: <span class="code-note">today.getTime()</span>. Também podemos criar uma data, passando como parâmetro o tempo em milisegundos ou em ISOString. Ex: </p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1434217927281</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    todayInISO <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;2015-06-13T17:50:25.057Z&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<div class="note">
+    O cálculo da data, é feito a partir de UTC +- 00:00, conhecido como Z, abreviação de Zulu Time. Logo se colocarmos a data do dia em que se comemora o Natal(dia 25/12) em milisegundos receberíamos no console <span class="code-note"> Wed Dec 24 2015 22:00:00 GMT-0200 (BRST)</span>, pois a hora do Brasil em relação ao <b>Greenwich Mean Time</b>, varia de 2 à 5 horas.
+</div>
+
+<h2 id="alguns-truques-d">Alguns truques :D</h2>
+<p>No javascript, não é possível criar uma data a partir de uma máscara, mas existe a possibilidade de obter o tempo em milisegundos a partir desta máscara... Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"> <span class="token comment" spellcheck="true">// retorna 1434164400000</span>
+<span class="token keyword">var</span> today <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">&quot;2015/06/13&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//Sat Jun 13 2015 00:00:00 GMT-0300 (Hora oficial do Brasil)</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>today<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Existe a forma de criar uma data passando a string como parâmetro neste formato: <span class="code-note">mês/dia/ano</span>. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">//Thu Dec 25 2014 00:00:00 GMT-0300 (Hora oficial do Brasil)</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;12/25/2014&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Note que se colocassemos a string no formato <span class="code-note">dia/mês/ano</span>, receberíamos a mensagem de erro: &quot;Invalid Date&quot;.</p>
+<div class="note">Tenha cuidado, os formatos oficialmente aceitos como parâmetro são RFC 2822 e ISO 8601 </div>
+
+<h3 id="criando-uma-data-passando-como-par-metro-uma-string-rfc-2822-e-iso-8601">Criando uma data passando como parâmetro uma String RFC 2822 e ISO 8601</h3>
+<p>O formato RFC 2822 é o que costumamos ver no toString de Date (Thu Dec 25 2014 00:00:00 GMT-0300 (BRT)), nós podemos criar uma data a partir dele, desta forma: </p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;Thu Dec 25 2014&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//or </span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;Thu Dec 25 2014 10:30:00&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Podemos criar a partir do ISO 8601, mas vale recitar que este formato é sensível à time zone, ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">//Wed Dec 24 2015 21:00:00 GMT-0300 (Hora oficial do Brasil)</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;2015-12-25&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//or </span>
+<span class="token comment" spellcheck="true">//Sat Dec 19 2015 07:30:00 GMT-0300 (Hora oficial do Brasil)</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;2015-12-19T10:30:00&quot;</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="criando-datas-sem-o-timezone-interferir">Criando datas sem o timezone interferir</h3>
+<p>Observe que o time zone interferiu nas duas datas que criamos, até mesmo passando a hora em string. Para que isto não aconteça, podemos passar o time zone <span class="code-note">-03:00</span> (no meu caso são 3 horas de atraso), dentro da nossa string... Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">//Sat Dec 19 2015 10:30:00 GMT-0300 (Hora oficial do Brasil)</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;2015-12-19T10:30:00-03:00&quot;</span><span class="token punctuation">)</span>
+</code></pre>
+<p>&quot;Mas desta forma eu terei que saber qual é o meu atraso em relação ao Meridiano de Greenwich&quot;, é verdade, mas também existe outra forma de criar uma data sem especificar a time zone, <b>passando a própria data como parâmetro</b>. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">//Sat Jun 13 2015 00:00:00 GMT-0300 (Hora oficial do Brasil)</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2015</span><span class="token punctuation">,</span> <span class="token number">05</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//or</span>
+<span class="token comment" spellcheck="true">//Sat Jun 13 2015 10:30:00 GMT-0300 (Hora oficial do Brasil)</span>
+<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">2015</span><span class="token punctuation">,</span> <span class="token number">05</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre>
+<div class="note">
+    É importante ressaltar que o mês no objeto data, vai de 0 até 11, por isso o mês 05 não é maio e sim junho
+</div>
+
+<p>A partir do momento que criamos uma instância do objeto date, temos acesso a API do mesmo.</p>
+<h2 id="api">API</h2>
+<h4 id="getyear-e-getfullyear">getYear e getFullYear</h4>
+<p><b>Cuidado!</b> O javascript é uma linguagem criada na década de 90, então se queremos saber o ano atual devemos colocar <span class="code-note">getFullYear()</span>. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;2014-06-01&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2014</span>
+today<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//retorna a quantidade de anos</span>
+<span class="token comment" spellcheck="true">//de 1990 até o ano especificado no parâmetro do new Date()</span>
+today<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="getmonth">getMonth</h4>
+<p>Lembra da nota que foi colocada agora pouco: &quot;É importante ressaltar que o mês no objeto data, vai de 0 até 11, por isso o mês 05 não é maio e sim junho&quot; ? O <span class="code-note">getMonth()</span> nos retorna o mês de 0 à 11. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token comment" spellcheck="true">//Sat May 09 2015 21:00:00 GMT-0300 (Hora oficial do Brasil)</span>
+<span class="token keyword">var</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;2015-05-10&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+today<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//4</span>
+</code></pre>
+<h4 id="getday-e-getdate">getDay e getDate</h4>
+<p>O <span class="code-note">getDay()</span> retorna o dia da semana começando de 0, já o <span class="code-note">getDate()</span> retorna o dia na data do calendário. Ex:</p>
+<pre class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">&quot;2015-05-10T10:03:00&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+today<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//6</span>
+
+today<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//10</span>
+</code></pre>
+<div class="note">
+    Cuidado com o <b>time zone</b>, pois dependendo do caso o <span class="code-note">getDate()</span> pode vim um dia antes.
+</div>
+
+<p>Não vou me aprofundar muito na API do Date, para o post não ficar muito extenso, talvez eu crie um post só sobre o Date API, mas recomendo muuuuito como referência de estudo o <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date"><em>Mozilla Developer Network</em></a> que separa uma seção bastante interessante sobre o Date. </p>
+<p>Valeeeu :D</p>
+	</article>
+	  <footer>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES * * */
+	        var disqus_shortname = 'clovisnetoblog';
+	        
+	        /* * * DON'T EDIT BELOW THIS LINE * * */
+	        (function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
+	    </script>
+	    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	    </footer>
+</section>
+
+	<script src="/js/prism.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>

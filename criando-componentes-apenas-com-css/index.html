@@ -1,0 +1,329 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>Clóvis Neto | Front End Engineer</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  	<link rel="canonical" href="http://clovisdasilvaneto.github.io" />
+  	<link rel="publisher" href="https://plus.google.com/u/0/107923948578708069647/posts"/>
+  	<meta property="og:locale" content="pt_BR" />
+  	<meta property="og:type" content="My blog and projects" />
+  	<meta property="og:title" content="Clóvis Neto" />
+  	<meta property="og:description" content="I love JS and CSS3 ;)" />
+  	<meta property="og:url" content="http://clovisdasilvaneto.github.io" />
+  	<meta property="og:site_name" content="Clóvis Neto" />
+  	<meta property="og:image" content="http://clovisdasilvaneto.github.io/img/clovis-neto.png" />
+  	<meta property="og:image:type" content="image/png">
+  	<meta name="twitter:card" content="summary_large_image"/>
+  	<meta name="twitter:title" content="Clóvis Neto - Front End Engineer"/>
+  	<meta name="twitter:site" content="@Clovissneto"/>
+  	<meta name="twitter:domain" content="Clóvis Neto"/>
+  	<meta name="twitter:image:src" content="http://clovisdasilvaneto.github.io/img/clovis-neto.png"/>
+  
+  	<link href="/css/prism.css" rel="stylesheet" />
+  	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,300' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="/css/github-repository.css">
+  	<link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+  	<nav id="menubar" class="flip-top">
+  		<ul class="container">
+  			<li><a href="/index.html">Home</a></li>
+  			<li><a href="/about">About</a></li>
+  			<li><a href="/blog">Blog</a></li>
+  			<li><a href="/projects">Projects</a></li>
+  			<li><a href="/talk-and-cases">Talk and Cases</a></li>
+  			<li class="socials"><a target="_blank" href="https://codepen.io/clovisneto/"><i class="fa fa-codepen"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://github.com/clovisdasilvaneto"><i class="fa fa-github"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://twitter.com/Clovissneto"><i class="fa fa-twitter"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://www.facebook.com/ClovisDaSilvaNeto"><i class="fa fa-facebook"></i></a></li>
+  		</ul>
+  
+  
+  		<label for="menu-mobile" class="mobile">
+  			<span></span>
+  			<span></span>
+  			<span></span>
+  
+  			<select id="menu-mobile">
+  				<option value="/index.html">Home</option>
+  				<option value="/about">About</option>
+  				<option value="/blog">Blog</option>
+  				<option value="/projects">Projects</option>
+  				<option value="/talk-and-cases">Talk and Cases</option>
+  				<option value="#" selected>Voltar</option>
+  			</select>
+  		</label>
+  	</nav>
+
+<header class="wrapper">
+	<div class="container">
+		<time datetime="July 1, 2015">July 1, 2015</time>
+		<h1>Criando componentes apenas com css</h1>
+		<h2>Faaaaaaaaala galeraa! Depois de um bom tempo sem &quot;dar as caras&quot;, resolvir voltar com um assunto um pouco esquecido mas bastante importante...</h2>
+	</div>
+</header>
+
+<section class="container">
+	<article>
+	    <b>Tags:</b>
+	           <a href="/tags/css.html" class="code" title="Posts sobre css">css</a>
+
+	           <a href="/tags/componentização-com-css.html" class="code" title="Posts sobre componentização-com-css">componentização-com-css</a>
+
+	           <a href="/tags/all-animation-css3.html" class="code" title="Posts sobre all-animation-css3">all-animation-css3</a>
+		
+		<br>
+		<br>
+
+	    <p>No dia 20 de abril, realizei uma talk bem descontraída sobre <a href="http://slides.com/clovisneto/deck#/1" target="_blank">Componentização com CSS</a> na <a href="http://www.thoughtworks.com/pt/" target="_blank">ThoughtWorks</a> em Recife/PE, não pude deixar de notar que a forma de como esta técnica facilita o desenvolvimento e ajuda na peformance, chamou a atênção de muitos dev&#39;s. Resolvi deixar algumas considerações finais sobre <em><b>componentização com css</b></em></p>
+<h3 id="uma-breve-introdu-o">Uma breve introdução</h3>
+<p>Apesar de ser desenvolvedor web, sempre fui um carinha apaixonado por front end, principalmente quando o assunto é relacionado à algum efeito <a class="_more" target="_blank" href="#" data-text="<b>Top of the Master</b><br> Algo mais foda que os muitos fodas (ok neer)..."><em>Top of the Master</em></a>.</p>
+<p>Me recordo do primeiro desenho que vi com css foi o de <a target="_blank" href="http://bernarddeluna.com/">Bernad de Luna</a>, quando ele desenhou o <a target="_blank" href="http://bernarddeluna.com/project/pure-css-homer/">Homer Simpsons</a> apenas com css. Depois veio <a target="_blank" href="http://www.felipefialho.com/">Felipe Fialho</a> e fez um teclado, xadrez e um personagem de jogo de video game (não me recordo do nome... até na talk eu esqueci ¬¬&#39;).</p>
+<p>Depois de um tempo brincando com desenhos e outras coisas feitas apenas com css, notei como o css nos possibilita a criação de diversas formas, mas eu queria mais que isso. Eu sabia que isto não iria ajudar em soluções reais para projetos, logo comecei a imaginar como aplicar estas técnicas &quot;show&quot; nos meus projetos do dia-a-dia.</p>
+<h3 id="conhecendo-as-t-cnicas">Conhecendo as técnicas</h3>
+<p>Nos meados de 2013~2014, estudando algumas propriedades do css, pude notar algo que me chamou atênção. Lembrei que existe uma propriedade específica para input&#39;s do tipo checkbox ou radio, então várias idéias começaram a brotar da minha mente, <span class="code-note">&quot;Are you fock man&quot;</span>. </p>
+<p>Imaginei que se eu posso prever uma ação de clique num campo especifico (claro o <span class="code-note">:checked</span> existe para quando um campo for checado), eu posso ir muito além de criar simples formulários bonitinhos e estilizados. Então comecei a criar acordeons, dropdowns (só para esudo porque isto também é possivel com o <span class="code-note">:hover</span>), galerias, modals, carroséis e etc...</p>
+<div class="note"><em>Vale lembrar que também podemos obter uma determinada ação de clique atravês do <span class="code-note">:target</span></em></div>
+
+<p>Sempre costumo antes de criar algo <a href="#very-fuck" data-text="Muito foda!" target="_blank">&quot;very fuck&quot;</a> com css, pensar em toda a lógica que será utilizada. </p>
+<center>
+    <img src="http://replygif.net/i/285.gif" alt="What?">
+</center>
+
+<h6 id="-h-l-gica-com-css-">ãh? lógica com css???</h6>
+<p>Não, eu não pirei, shusahushua, imagine comigo, se você quer atribuir um estilo em um elemento quando uma determinada ação acontecer, como você faria? Usaria javascript?</p>
+<p>Porque não da uma chance para o nosso amigo css? Vamos pensar um pouco...</p>
+<center>
+    <img src="http://siep.ifpe.edu.br/anderson/blog/wp-content/uploads/2009/10/esqueleto-pensador.gif" alt="Pensador?">
+</center>
+
+<h3 id="criando-o-componente">Criando o componente</h3>
+<p>Vejamos uma simples marcação html, com a estrutura de um modal:</p>
+<pre><code class="lang-markup">    &lt;input type=&quot;checkbox&quot; id=&quot;modal&quot; hidden&gt;
+    &lt;label for=&quot;modal&quot;&gt;Teste-me&lt;/label&gt;
+
+    &lt;article id=&quot;my-modal-content&quot;&gt;
+        &lt;header&gt;
+            &lt;h3&gt;Meu Modal&lt;/h3&gt;
+        &lt;/header&gt;
+
+        &lt;p&gt;You fuck man!&lt;/p&gt;
+    &lt;/article&gt;
+</code></pre>
+<div class="note">Note que escondemos o input com o atributo hidden do html</div>
+
+<p>Agora vamos aplicar um estilo básico:</p>
+<pre><code class="lang-css">    <em> { margin: 0; padding:0; }
+
+    label {
+        color:#fff;
+        display: inline-block;
+        padding:10px;
+        background: blue;
+        cursor: pointer;
+    }
+
+    #my-modal-content {
+        position: absolute;
+        top: 30px;
+        margin-left: -200px;
+        left: 50%;
+        background-color: #fff;
+        width: 100%;
+        border: solid 1px #f3f3f3;
+        min-height: 170px;
+        max-width: 400px;
+        box-shadow: 2px 2px 3px rgba(204, 204, 204, 0.45);
+        border-radius:5px;
+    }
+
+    h3 {
+        margin: 0;
+        padding: 13px 0 11px;
+        font-size: 24px;
+        border-bottom: solid 1px #f3f3f3;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 18px;
+        padding-top: 20px;
+    }
+
+    h3, p {
+        padding-left:31px;
+    }
+</code></pre>
+<p>logo o estilo do nosso modal ficaria desta forma:</p>
+<style>
+    </em> { margin: 0; padding:0; }
+
+    label {
+        cursor: pointer;
+        color:#fff;
+        display: inline-block;
+        padding:10px;
+        background: blue;
+    }
+
+    .my-modal-content {
+        position: absolute!important;
+        top: -40px!important;
+        margin-left: -200px!important;
+        left: 50%!important;
+        background-color: #fff!important;
+        width: 100%!important;
+        border: solid 1px #f3f3f3!important;
+        min-height: 170px!important;
+        max-width: 400px!important;
+        -webkit-transition:ease-in-out all 0.5s!important;
+        -moz-transition:ease-in-out all 0.5s!important;
+        -ms-transition:ease-in-out all 0.5s!important;
+        -o-transition:ease-in-out all 0.5s!important;
+        transition:ease-in-out all 0.5s!important;
+        box-shadow: 2px 2px 3px rgba(204, 204, 204, 0.45)!important;
+        border-radius:5px!important;
+    }
+
+    .my-modal-content h3 {
+        margin: 0!important;
+        padding: 13px 31px 11px!important;
+        font-size: 24px!important;
+        border-bottom: solid 1px #f3f3f3!important;
+        font-weight: 300!important;
+    }
+
+    .my-modal-content p {
+        font-size: 18px!important;
+        padding-top: 20px!important;
+        padding-left: 31px!important;
+    }
+
+    #content-1 {
+        margin-top: 0px;
+        position: relative;
+        padding: 20px;
+        min-height: 200px;
+    }
+</style>
+
+<div id="content-1">
+    <input type="checkbox" id="modal" hidden>
+    <label for="modal">Teste-me</label>
+
+    <article class="my-modal-content">
+        <header>
+            <h3>Meu Modal</h3>
+        </header>
+
+        <p>You fuck man!</p>
+    </article>
+</div>
+
+<p>Agora que tal estilizar os irmãos deste elemento apenas quando ele for checado? </p>
+<p>Existe uma propriedade css que nos possibilita selecionar os irmãos de um determinado elemento, que é o acento <span class="code-note">~</span> (til). </p>
+<p>Colocarei um <span class="code-note">opacity:0; visibility:hidden</span> no modal e uma transição para simular um efeito de fadeIn, para que fique escondido e com o pseudo elemento <span class="code-note">:checked</span> faremos a mágicar acontecer!</p>
+<pre><code class="lang-css">    #my-modal-content {
+        (...)
+        opacity:0;
+        visibility:hidden;
+        -webkit-transition:ease-in-out all 0.5s;
+        -moz-transition:ease-in-out all 0.5s;
+        -ms-transition:ease-in-out all 0.5s;
+        -o-transition:ease-in-out all 0.5s;
+        transition:ease-in-out all 0.5s;
+    }
+
+    input:checked ~ #my-modal-content {
+        opacity:1;
+        visibility:visible;
+    }
+</code></pre>
+<p>Teriamos um efeito parecido com este:</p>
+<style>
+    #modal-opened {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    input:checked ~ #modal-opened {
+        opacity:1;
+        visibility:visible;
+    }
+</style>
+
+<div id="content-1">
+    <input type="checkbox" id="modal2" hidden>
+    <label for="modal2">Teste-me</label>
+
+    <article class="my-modal-content" id="modal-opened">
+        <header>
+            <h3>Meu Modal</h3>
+        </header>
+
+        <p>You fuck man!</p>
+    </article>
+</div>
+
+<p>Perceba como foi simples, fácil, prático e peformático criar o nosso componente.</p>
+<center>
+    <img src="../img/tumblr_ma6937tKF01r2wtdzo1_500.gif" alt="Espanto">
+</center>
+
+<h3 id="e-a-peformance-">E a peformance?</h3>
+<p>Não vou me estender muito em questão de peformance para o post não ficar muito grande, mas só para você ter idéia, um site foi testado no <a href="http://gtmetrix.com/" target="_blank">GTMetrix</a> antes de usar componentes apenas com css. Os valores obtidos foram os seguintes:</p>
+<style>
+    #list li {
+        list-style: inside;
+    }
+</style>
+
+<p><ul id="list">
+    <li>Page load time: 1.26s</li>
+    <li>Total page size: 197KB</li>
+    <li>Total number of requests: 8</li>
+</ul>
+<br></p>
+<p>Logo depois utilizamos componentes com css, embedamos o css e o carregamento dos icones foi descartado. Obtivemos os seguintes valores</p>
+<p><ul>
+    <li>Page load time: 0.75s</li>
+    <li>Total page size: 58.6KB</li>
+    <li>Total number of requests: 5</li>
+</ul>
+<br></p>
+<p>Um impacto de peformance bastante considerável pois simples ajustes que muitas vezes esquecemos de fazer, como diminuir requisições, podem causar um impacto muito maior na perfomance de um projeto.</p>
+<h3 id="algumas-fontes-">Algumas fontes...</h3>
+<p>É sempre bom ter uma outra fonte de estudo. E como referência, não posso deixar de citar o site da MDN (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements" target="_blank">clique aqui</a>).
+Também encontrei um post da hora no blog do <a href="http://www.felipefialho.com/" target="_blank">Felipe Fialho</a> (<a href="http://www.felipefialho.com/blog/2014/e-possivel-utilizar-componentes-desenvolvidos-apenas-com-css/" target="_blank">clique aqui</a>). </p>
+<h3 id="frameworks-3">Frameworks &lt;3</h3>
+<p>&quot;A parte boa da coisa sempre fica por ultimo&quot;, o Felipe Fialho (Fala felipão! já da pra cobrar pela citação do teu nome no post suhaushauha) criou o <a href="http://www.felipefialho.com/css-components/" target="_blank">Pure CSS Components</a>, uma lib muito bacana que reúne uma série de elementos componentizados com css, que vai desde um simples modal até um carrosel. Recentemente ela foi ré-escrita com o stylus. Vale apena conferir (<a href="http://www.felipefialho.com/css-components/" target="_blank">clique aqui</a>).</p>
+<p>Não é bem componentização, mas engloba tudo... <a href="http://clovisdasilvaneto.github.io/all-animation">All Animation CSS3</a> é uma lib que contém várias animações css3 que pode nos auxiliar no desenvolvimento dos nossos componentes com animações css muito da hora.</p>
+<h3 id="considera-es-finais">Considerações Finais</h3>
+<p>Sem dúvida o css já nos ofereceu muito e ainda terá muiiiiito a nos oferecer, só basta usar a cabeça e por a criatividade em prática!</p>
+<p><em>É isso ai galera, um enorme abraço e até a próxima :D</em></p>
+	</article>
+	  <footer>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES * * */
+	        var disqus_shortname = 'clovisnetoblog';
+	        
+	        /* * * DON'T EDIT BELOW THIS LINE * * */
+	        (function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
+	    </script>
+	    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	    </footer>
+</section>
+
+	<script src="/js/prism.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>
