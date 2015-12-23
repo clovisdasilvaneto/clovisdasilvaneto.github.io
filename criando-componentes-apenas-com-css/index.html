@@ -2,24 +2,27 @@
   <html lang="pt-br">
   <head>
   	<meta charset="UTF-8">
-  	<title></title>
+  	<title>
+  		
+  			Criando componentes apenas com css
+  	</title>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   	<link rel="canonical" href="http://clovisdasilvaneto.github.io" />
   	<link rel="publisher" href="https://plus.google.com/u/0/107923948578708069647/posts"/>
   	<meta property="og:locale" content="pt_BR" />
   	<meta property="og:type" content="My blog and projects" />
-  	<meta property="og:title" content="" />
-  	<meta property="og:description" content="" />
+  	<meta property="og:title" content=" Criando componentes apenas com css" />
+  	<meta property="og:description" content="Faaaaaaaaala galeraa! Depois de um bom tempo sem &quot;dar as caras&quot;, resolvir voltar com um assunto um pouco esquecido mas bastante importante..." />
   	<meta property="og:site_name" content="Clóvis Neto" />
   	<meta property="og:image" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg" />
   	<meta property="og:image:type" content="image/png">
   	<meta name="twitter:card" content="summary_large_image"/>
-  	<meta name="twitter:title" content=""/>
+  	<meta name="twitter:title" content=" Criando componentes apenas com css"/>
   	<meta name="twitter:site" content="@Clovissneto"/>
   	<meta name="twitter:domain" content="Clóvis Neto"/>
   	<meta name="twitter:image:src" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg"/>
-  	<meta name="description" content="">
+  	<meta name="description" content="Faaaaaaaaala galeraa! Depois de um bom tempo sem &quot;dar as caras&quot;, resolvir voltar com um assunto um pouco esquecido mas bastante importante...">
   	<meta name="keywords" content="css,componentização-com-css,all-animation-css3">
   
   	<link href="/css/prism.css" rel="stylesheet" />
@@ -40,6 +43,254 @@
   	</script>
   </head>
   <body>
+  	<!-- <p>
+  		  posts: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+  				  projects: [object Object]
+  				  talks: [object Object],[object Object],[object Object],[object Object],[object Object]
+  				  collections: [object Object]
+  				  title: Criando componentes apenas com css
+  				  title_page: Criando componentes apenas com css
+  				  template: post.hbt
+  				  date: Wed Jul 01 2015 21:00:00 GMT-0300 (BRT)
+  				  description: Faaaaaaaaala galeraa! Depois de um bom tempo sem &quot;dar as caras&quot;, resolvir voltar com um assunto um pouco esquecido mas bastante importante...
+  				  author: Clóvis Neto.
+  				  tags: css,componentização-com-css,all-animation-css3
+  				  contents: &lt;p&gt;No dia 20 de abril, realizei uma talk bem descontraída sobre &lt;a href=&quot;http://slides.com/clovisneto/deck#/1&quot; target=&quot;_blank&quot;&gt;Componentização com CSS&lt;/a&gt; na &lt;a href=&quot;http://www.thoughtworks.com/pt/&quot; target=&quot;_blank&quot;&gt;ThoughtWorks&lt;/a&gt; em Recife/PE, não pude deixar de notar que a forma de como esta técnica facilita o desenvolvimento e ajuda na peformance, chamou a atênção de muitos dev&amp;#39;s. Resolvi deixar algumas considerações finais sobre &lt;em&gt;&lt;b&gt;componentização com css&lt;/b&gt;&lt;/em&gt;&lt;/p&gt;
+  &lt;h3 id=&quot;uma-breve-introdu-o&quot;&gt;Uma breve introdução&lt;/h3&gt;
+  &lt;p&gt;Apesar de ser desenvolvedor web, sempre fui um carinha apaixonado por front end, principalmente quando o assunto é relacionado à algum efeito &lt;a class=&quot;_more&quot; target=&quot;_blank&quot; href=&quot;#&quot; data-text=&quot;&lt;b&gt;Top of the Master&lt;/b&gt;&lt;br&gt; Algo mais foda que os muitos fodas (ok neer)...&quot;&gt;&lt;em&gt;Top of the Master&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+  &lt;p&gt;Me recordo do primeiro desenho que vi com css foi o de &lt;a target=&quot;_blank&quot; href=&quot;http://bernarddeluna.com/&quot;&gt;Bernad de Luna&lt;/a&gt;, quando ele desenhou o &lt;a target=&quot;_blank&quot; href=&quot;http://bernarddeluna.com/project/pure-css-homer/&quot;&gt;Homer Simpsons&lt;/a&gt; apenas com css. Depois veio &lt;a target=&quot;_blank&quot; href=&quot;http://www.felipefialho.com/&quot;&gt;Felipe Fialho&lt;/a&gt; e fez um teclado, xadrez e um personagem de jogo de video game (não me recordo do nome... até na talk eu esqueci ¬¬&amp;#39;).&lt;/p&gt;
+  &lt;p&gt;Depois de um tempo brincando com desenhos e outras coisas feitas apenas com css, notei como o css nos possibilita a criação de diversas formas, mas eu queria mais que isso. Eu sabia que isto não iria ajudar em soluções reais para projetos, logo comecei a imaginar como aplicar estas técnicas &amp;quot;show&amp;quot; nos meus projetos do dia-a-dia.&lt;/p&gt;
+  &lt;h3 id=&quot;conhecendo-as-t-cnicas&quot;&gt;Conhecendo as técnicas&lt;/h3&gt;
+  &lt;p&gt;Nos meados de 2013~2014, estudando algumas propriedades do css, pude notar algo que me chamou atênção. Lembrei que existe uma propriedade específica para input&amp;#39;s do tipo checkbox ou radio, então várias idéias começaram a brotar da minha mente, &lt;span class=&quot;code-note&quot;&gt;&amp;quot;Are you fock man&amp;quot;&lt;/span&gt;. &lt;/p&gt;
+  &lt;p&gt;Imaginei que se eu posso prever uma ação de clique num campo especifico (claro o &lt;span class=&quot;code-note&quot;&gt;:checked&lt;/span&gt; existe para quando um campo for checado), eu posso ir muito além de criar simples formulários bonitinhos e estilizados. Então comecei a criar acordeons, dropdowns (só para esudo porque isto também é possivel com o &lt;span class=&quot;code-note&quot;&gt;:hover&lt;/span&gt;), galerias, modals, carroséis e etc...&lt;/p&gt;
+  &lt;div class=&quot;note&quot;&gt;&lt;em&gt;Vale lembrar que também podemos obter uma determinada ação de clique atravês do &lt;span class=&quot;code-note&quot;&gt;:target&lt;/span&gt;&lt;/em&gt;&lt;/div&gt;
+  
+  &lt;p&gt;Sempre costumo antes de criar algo &lt;a href=&quot;#very-fuck&quot; data-text=&quot;Muito foda!&quot; target=&quot;_blank&quot;&gt;&amp;quot;very fuck&amp;quot;&lt;/a&gt; com css, pensar em toda a lógica que será utilizada. &lt;/p&gt;
+  &lt;center&gt;
+      &lt;img src=&quot;http://replygif.net/i/285.gif&quot; alt=&quot;What?&quot;&gt;
+  &lt;/center&gt;
+  
+  &lt;h6 id=&quot;-h-l-gica-com-css-&quot;&gt;ãh? lógica com css???&lt;/h6&gt;
+  &lt;p&gt;Não, eu não pirei, shusahushua, imagine comigo, se você quer atribuir um estilo em um elemento quando uma determinada ação acontecer, como você faria? Usaria javascript?&lt;/p&gt;
+  &lt;p&gt;Porque não da uma chance para o nosso amigo css? Vamos pensar um pouco...&lt;/p&gt;
+  &lt;center&gt;
+      &lt;img src=&quot;http://siep.ifpe.edu.br/anderson/blog/wp-content/uploads/2009/10/esqueleto-pensador.gif&quot; alt=&quot;Pensador?&quot;&gt;
+  &lt;/center&gt;
+  
+  &lt;h3 id=&quot;criando-o-componente&quot;&gt;Criando o componente&lt;/h3&gt;
+  &lt;p&gt;Vejamos uma simples marcação html, com a estrutura de um modal:&lt;/p&gt;
+  &lt;pre&gt;&lt;code class=&quot;lang-markup&quot;&gt;    &amp;lt;input type=&amp;quot;checkbox&amp;quot; id=&amp;quot;modal&amp;quot; hidden&amp;gt;
+      &amp;lt;label for=&amp;quot;modal&amp;quot;&amp;gt;Teste-me&amp;lt;/label&amp;gt;
+  
+      &amp;lt;article id=&amp;quot;my-modal-content&amp;quot;&amp;gt;
+          &amp;lt;header&amp;gt;
+              &amp;lt;h3&amp;gt;Meu Modal&amp;lt;/h3&amp;gt;
+          &amp;lt;/header&amp;gt;
+  
+          &amp;lt;p&amp;gt;You fuck man!&amp;lt;/p&amp;gt;
+      &amp;lt;/article&amp;gt;
+  &lt;/code&gt;&lt;/pre&gt;
+  &lt;div class=&quot;note&quot;&gt;Note que escondemos o input com o atributo hidden do html&lt;/div&gt;
+  
+  &lt;p&gt;Agora vamos aplicar um estilo básico:&lt;/p&gt;
+  &lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;    &lt;em&gt; { margin: 0; padding:0; }
+  
+      label {
+          color:#fff;
+          display: inline-block;
+          padding:10px;
+          background: blue;
+          cursor: pointer;
+      }
+  
+      #my-modal-content {
+          position: absolute;
+          top: 30px;
+          margin-left: -200px;
+          left: 50%;
+          background-color: #fff;
+          width: 100%;
+          border: solid 1px #f3f3f3;
+          min-height: 170px;
+          max-width: 400px;
+          box-shadow: 2px 2px 3px rgba(204, 204, 204, 0.45);
+          border-radius:5px;
+      }
+  
+      h3 {
+          margin: 0;
+          padding: 13px 0 11px;
+          font-size: 24px;
+          border-bottom: solid 1px #f3f3f3;
+          font-weight: 300;
+      }
+  
+      p {
+          font-size: 18px;
+          padding-top: 20px;
+      }
+  
+      h3, p {
+          padding-left:31px;
+      }
+  &lt;/code&gt;&lt;/pre&gt;
+  &lt;p&gt;logo o estilo do nosso modal ficaria desta forma:&lt;/p&gt;
+  &lt;style&gt;
+      &lt;/em&gt; { margin: 0; padding:0; }
+  
+      label {
+          cursor: pointer;
+          color:#fff;
+          display: inline-block;
+          padding:10px;
+          background: blue;
+      }
+  
+      .my-modal-content {
+          position: absolute!important;
+          top: -40px!important;
+          margin-left: -200px!important;
+          left: 50%!important;
+          background-color: #fff!important;
+          width: 100%!important;
+          border: solid 1px #f3f3f3!important;
+          min-height: 170px!important;
+          max-width: 400px!important;
+          -webkit-transition:ease-in-out all 0.5s!important;
+          -moz-transition:ease-in-out all 0.5s!important;
+          -ms-transition:ease-in-out all 0.5s!important;
+          -o-transition:ease-in-out all 0.5s!important;
+          transition:ease-in-out all 0.5s!important;
+          box-shadow: 2px 2px 3px rgba(204, 204, 204, 0.45)!important;
+          border-radius:5px!important;
+      }
+  
+      .my-modal-content h3 {
+          margin: 0!important;
+          padding: 13px 31px 11px!important;
+          font-size: 24px!important;
+          border-bottom: solid 1px #f3f3f3!important;
+          font-weight: 300!important;
+      }
+  
+      .my-modal-content p {
+          font-size: 18px!important;
+          padding-top: 20px!important;
+          padding-left: 31px!important;
+      }
+  
+      #content-1 {
+          margin-top: 0px;
+          position: relative;
+          padding: 20px;
+          min-height: 200px;
+      }
+  &lt;/style&gt;
+  
+  &lt;div id=&quot;content-1&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;modal&quot; hidden&gt;
+      &lt;label for=&quot;modal&quot;&gt;Teste-me&lt;/label&gt;
+  
+      &lt;article class=&quot;my-modal-content&quot;&gt;
+          &lt;header&gt;
+              &lt;h3&gt;Meu Modal&lt;/h3&gt;
+          &lt;/header&gt;
+  
+          &lt;p&gt;You fuck man!&lt;/p&gt;
+      &lt;/article&gt;
+  &lt;/div&gt;
+  
+  &lt;p&gt;Agora que tal estilizar os irmãos deste elemento apenas quando ele for checado? &lt;/p&gt;
+  &lt;p&gt;Existe uma propriedade css que nos possibilita selecionar os irmãos de um determinado elemento, que é o acento &lt;span class=&quot;code-note&quot;&gt;~&lt;/span&gt; (til). &lt;/p&gt;
+  &lt;p&gt;Colocarei um &lt;span class=&quot;code-note&quot;&gt;opacity:0; visibility:hidden&lt;/span&gt; no modal e uma transição para simular um efeito de fadeIn, para que fique escondido e com o pseudo elemento &lt;span class=&quot;code-note&quot;&gt;:checked&lt;/span&gt; faremos a mágicar acontecer!&lt;/p&gt;
+  &lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;    #my-modal-content {
+          (...)
+          opacity:0;
+          visibility:hidden;
+          -webkit-transition:ease-in-out all 0.5s;
+          -moz-transition:ease-in-out all 0.5s;
+          -ms-transition:ease-in-out all 0.5s;
+          -o-transition:ease-in-out all 0.5s;
+          transition:ease-in-out all 0.5s;
+      }
+  
+      input:checked ~ #my-modal-content {
+          opacity:1;
+          visibility:visible;
+      }
+  &lt;/code&gt;&lt;/pre&gt;
+  &lt;p&gt;Teriamos um efeito parecido com este:&lt;/p&gt;
+  &lt;style&gt;
+      #modal-opened {
+          opacity: 0;
+          visibility: hidden;
+      }
+  
+      input:checked ~ #modal-opened {
+          opacity:1;
+          visibility:visible;
+      }
+  &lt;/style&gt;
+  
+  &lt;div id=&quot;content-1&quot;&gt;
+      &lt;input type=&quot;checkbox&quot; id=&quot;modal2&quot; hidden&gt;
+      &lt;label for=&quot;modal2&quot;&gt;Teste-me&lt;/label&gt;
+  
+      &lt;article class=&quot;my-modal-content&quot; id=&quot;modal-opened&quot;&gt;
+          &lt;header&gt;
+              &lt;h3&gt;Meu Modal&lt;/h3&gt;
+          &lt;/header&gt;
+  
+          &lt;p&gt;You fuck man!&lt;/p&gt;
+      &lt;/article&gt;
+  &lt;/div&gt;
+  
+  &lt;p&gt;Perceba como foi simples, fácil, prático e peformático criar o nosso componente.&lt;/p&gt;
+  &lt;center&gt;
+      &lt;img src=&quot;../img/tumblr_ma6937tKF01r2wtdzo1_500.gif&quot; alt=&quot;Espanto&quot;&gt;
+  &lt;/center&gt;
+  
+  &lt;h3 id=&quot;e-a-peformance-&quot;&gt;E a peformance?&lt;/h3&gt;
+  &lt;p&gt;Não vou me estender muito em questão de peformance para o post não ficar muito grande, mas só para você ter idéia, um site foi testado no &lt;a href=&quot;http://gtmetrix.com/&quot; target=&quot;_blank&quot;&gt;GTMetrix&lt;/a&gt; antes de usar componentes apenas com css. Os valores obtidos foram os seguintes:&lt;/p&gt;
+  &lt;style&gt;
+      #list li {
+          list-style: inside;
+      }
+  &lt;/style&gt;
+  
+  &lt;p&gt;&lt;ul id=&quot;list&quot;&gt;
+      &lt;li&gt;Page load time: 1.26s&lt;/li&gt;
+      &lt;li&gt;Total page size: 197KB&lt;/li&gt;
+      &lt;li&gt;Total number of requests: 8&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;&lt;/p&gt;
+  &lt;p&gt;Logo depois utilizamos componentes com css, embedamos o css e o carregamento dos icones foi descartado. Obtivemos os seguintes valores&lt;/p&gt;
+  &lt;p&gt;&lt;ul&gt;
+      &lt;li&gt;Page load time: 0.75s&lt;/li&gt;
+      &lt;li&gt;Total page size: 58.6KB&lt;/li&gt;
+      &lt;li&gt;Total number of requests: 5&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;&lt;/p&gt;
+  &lt;p&gt;Um impacto de peformance bastante considerável pois simples ajustes que muitas vezes esquecemos de fazer, como diminuir requisições, podem causar um impacto muito maior na perfomance de um projeto.&lt;/p&gt;
+  &lt;h3 id=&quot;algumas-fontes-&quot;&gt;Algumas fontes...&lt;/h3&gt;
+  &lt;p&gt;É sempre bom ter uma outra fonte de estudo. E como referência, não posso deixar de citar o site da MDN (&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements&quot; target=&quot;_blank&quot;&gt;clique aqui&lt;/a&gt;).
+  Também encontrei um post da hora no blog do &lt;a href=&quot;http://www.felipefialho.com/&quot; target=&quot;_blank&quot;&gt;Felipe Fialho&lt;/a&gt; (&lt;a href=&quot;http://www.felipefialho.com/blog/2014/e-possivel-utilizar-componentes-desenvolvidos-apenas-com-css/&quot; target=&quot;_blank&quot;&gt;clique aqui&lt;/a&gt;). &lt;/p&gt;
+  &lt;h3 id=&quot;frameworks-3&quot;&gt;Frameworks &amp;lt;3&lt;/h3&gt;
+  &lt;p&gt;&amp;quot;A parte boa da coisa sempre fica por ultimo&amp;quot;, o Felipe Fialho (Fala felipão! já da pra cobrar pela citação do teu nome no post suhaushauha) criou o &lt;a href=&quot;http://www.felipefialho.com/css-components/&quot; target=&quot;_blank&quot;&gt;Pure CSS Components&lt;/a&gt;, uma lib muito bacana que reúne uma série de elementos componentizados com css, que vai desde um simples modal até um carrosel. Recentemente ela foi ré-escrita com o stylus. Vale apena conferir (&lt;a href=&quot;http://www.felipefialho.com/css-components/&quot; target=&quot;_blank&quot;&gt;clique aqui&lt;/a&gt;).&lt;/p&gt;
+  &lt;p&gt;Não é bem componentização, mas engloba tudo... &lt;a href=&quot;http://clovisdasilvaneto.github.io/all-animation&quot;&gt;All Animation CSS3&lt;/a&gt; é uma lib que contém várias animações css3 que pode nos auxiliar no desenvolvimento dos nossos componentes com animações css muito da hora.&lt;/p&gt;
+  &lt;h3 id=&quot;considera-es-finais&quot;&gt;Considerações Finais&lt;/h3&gt;
+  &lt;p&gt;Sem dúvida o css já nos ofereceu muito e ainda terá muiiiiito a nos oferecer, só basta usar a cabeça e por a criatividade em prática!&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;É isso ai galera, um enorme abraço e até a próxima :D&lt;/em&gt;&lt;/p&gt;
+  				  mode: 0644
+  				  stats: [object Object]
+  				  collection: posts
+  				  previous: [object Object]
+  				  next: [object Object]
+  				  path: criando-componentes-apenas-com-css
+  				  filename: /Applications/XAMPP/xamppfiles/htdocs/meu-blog/templates/post.hbt
+  				  data: true
+  				  knownHelpers: [object Object]
+  		</p> -->
   	<nav id="menubar" class="flip-top">
   		<ul class="container">
   			<li><a href="/index.html">Home</a></li>

@@ -2,24 +2,27 @@
   <html lang="pt-br">
   <head>
   	<meta charset="UTF-8">
-  	<title></title>
+  	<title>
+  		
+  			Making of
+  	</title>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   	<link rel="canonical" href="http://clovisdasilvaneto.github.io" />
   	<link rel="publisher" href="https://plus.google.com/u/0/107923948578708069647/posts"/>
   	<meta property="og:locale" content="pt_BR" />
   	<meta property="og:type" content="My blog and projects" />
-  	<meta property="og:title" content="" />
-  	<meta property="og:description" content="" />
+  	<meta property="og:title" content=" Making of" />
+  	<meta property="og:description" content="Antes de começar a sair postando, resolvir apresentar como foi desenvolvido o meu blog" />
   	<meta property="og:site_name" content="Clóvis Neto" />
   	<meta property="og:image" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg" />
   	<meta property="og:image:type" content="image/png">
   	<meta name="twitter:card" content="summary_large_image"/>
-  	<meta name="twitter:title" content=""/>
+  	<meta name="twitter:title" content=" Making of"/>
   	<meta name="twitter:site" content="@Clovissneto"/>
   	<meta name="twitter:domain" content="Clóvis Neto"/>
   	<meta name="twitter:image:src" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg"/>
-  	<meta name="description" content="">
+  	<meta name="description" content="Antes de começar a sair postando, resolvir apresentar como foi desenvolvido o meu blog">
   	<meta name="keywords" content="metalsmith,making-of">
   
   	<link href="/css/prism.css" rel="stylesheet" />
@@ -40,6 +43,54 @@
   	</script>
   </head>
   <body>
+  	<!-- <p>
+  		  posts: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+  				  projects: [object Object]
+  				  talks: [object Object],[object Object],[object Object],[object Object],[object Object]
+  				  collections: [object Object]
+  				  title: Making of
+  				  title_page: Making of
+  				  template: post.hbt
+  				  date: Tue Jun 09 2015 21:00:00 GMT-0300 (BRT)
+  				  description: Antes de começar a sair postando, resolvir apresentar como foi desenvolvido o meu blog
+  				  author: Clóvis Neto.
+  				  tags: metalsmith,making-of
+  				  contents: &lt;p&gt;&lt;h2 id=&quot;antes-de-mais-nada&quot;&gt;Antes de mais nada&lt;/h2&gt;&lt;/p&gt;
+  &lt;p&gt;Povo do meu Brasil brasileiro, apesar de eu já postar no tablelesss e no devmedia, vamo com calma nos coments, (que nada, pode descer o pal mesmo) sauhsauhuhsa, que esse é o primeiro post do blog.&lt;/p&gt;
+  &lt;h3 id=&quot;calma-maan-deixa-logo-eu-me-apresentar-&quot;&gt;Calma maan, deixa logo eu me apresentar!&lt;/h3&gt;
+  &lt;p&gt;Então, meu nome é &lt;em&gt;Clóvis da Silva Neto&lt;/em&gt;, &amp;quot;aah... não me diga&amp;quot;, tenho 20 anos e resido em recife/PE. Sou Web Developer Engineer, e atualmente trabalho home ofice (não tem nada melhor que isso :p). Meu &amp;#39;xodó&amp;#39; é o &lt;a href=&quot;http://clovisdasilvaneto.github.io/all-animation&quot; target=&quot;_blank&quot; title=&quot;vai logo lá, seu merda&quot;&gt;All Animation CSS3&lt;/a&gt;, um framework css, focado em animações cross browsers, de fácil implementação e curto código; atualmente estamos trabalhando na v2.0 do framework. Comecei a estudar web aos 13 anos de idade, mas só comecei a trabalhar na área ao 17 anos. &lt;b&gt;NÃO TENHO FACULDADE&lt;/b&gt; :p, isso mesmo, sou auto-didata, e vivo muito bem assim... suhasuhaushauhash&lt;/p&gt;
+  &lt;h4 id=&quot;e-porque-web-&quot;&gt;E porque web?&lt;/h4&gt;
+  &lt;p&gt;Porque eu sou apaixonado pelo meu trabalho! Aliás, acho que não é necessáriamente um &amp;#39;trabalho&amp;#39;, pois algo que você se diverte tanto estudando e se mantém sempre atualizado, não é visto como trabalho aqui no Brasil. ;)&lt;/p&gt;
+  &lt;h3 id=&quot;bla-bla-bla-vai-logo-pra-parte-em-que-voc-fala-como-foi-feito-o-blog&quot;&gt;Bla bla bla... Vai logo pra parte em que você fala como foi feito o blog&lt;/h3&gt;
+  &lt;p&gt;O blog foi desnvolvido usando um gerador estático, por preferência usei o &lt;b&gt;Metalsmith&lt;/b&gt;, pela gama de plugins e fácilidade no desenvolvimento que ele me oferece. Também pensei em usar o Jkylle, mas optei pelo &lt;b&gt;Metalsmith&lt;/b&gt;, depois de ter vistos alguns post&amp;#39;s fantásticos do meu amigo &lt;a href=&quot;http://expalmer.github.io/&quot; target=&quot;_blank&quot; title=&quot;caba baum :p&quot;&gt;Palmer Oliveira&lt;/a&gt;.&lt;/p&gt;
+  &lt;p&gt;As demais tecnologias utlizadas foram:&lt;/p&gt;
+  &lt;ul&gt;
+  &lt;li&gt;&lt;p&gt;&lt;a class=&quot;_more&quot; href=&quot;http://gulpjs.com/&quot; data-text=&quot;&lt;b&gt;O que é isto?&lt;/b&gt; &lt;br&gt; Gulp, é um automatizador de tarefas, que nos permite comprimir o javascript, fazer liveReload no browser, comprimir o css, comprimir o tamanho das imagens e muiiiito mais!&quot;&gt;Gulp Js&lt;/a&gt; - Para mimificar o js, compilar o SASS e mimificar o css.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;&lt;a class=&quot;_more&quot; href=&quot;http://sass-lang.com/&quot; data-text=&quot;&lt;b&gt;O que é isto?&lt;/b&gt; &lt;br&gt; &#x27;Sass significa Syntactically Awesome Stylesheets Sass, e foi criado por Hampton Catlin. É uma maneira de simplificar o fluxo de trabalho CSS, fazendo tarefas de desenvolvimento e manutenção mais fácil.&#x27; - Carlos Stenzel&quot;&gt;Sass&lt;/a&gt; - Bem, já fazia tmepo que eu estava prometendo o blog, então usei o Sass para poder agilizar o processo de desenvolvimento e também pelos mixins que eu particulamente sou hiper-mega-fã.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/clovisdasilvaneto/clovisdasilvaneto.github.io&quot;&gt;Github Pages&lt;/a&gt; - Onde está hospedado o blog :)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://nodejs.org/&quot;&gt;Node Js&lt;/a&gt; - &lt;b&gt;&amp;quot;O queeeê ?! mas você não falou agora pouco que é um blog estático, e como você conseguiu hospedar um blog rodando no NodeJs no github O.o ????&amp;quot;&lt;/b&gt;. Caalma pessoal, o blog é estático sim, e não tem nada de NodeJs no github kkkk, mas o Metalsmith é javascript e roda com NodeJs, mas tudo isso na minha máquinha, quando eu quero passar pra o github é só executar um node index na raiz do meu diretório, que ele gera os arquivos html pra mim, tudo simples e prático.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://handlebarsjs.com/&quot;&gt;Handlebars&lt;/a&gt; - Template engine do blog.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;Também estou utilizando o &lt;b&gt;metalsmith-markdown&lt;/b&gt;, que é um plugin do metalsmith interpreta os meus arquivos &lt;em&gt;.md&lt;/em&gt;&lt;/p&gt;
+  &lt;h3 id=&quot;-showman&quot;&gt;#ShowMan&lt;/h3&gt;
+  &lt;p&gt;O Metalsmith é muuuito da hora, e vale a pena da uma conferida como ele funciona, em breve estarei iniciando uma série sobre ele.&lt;/p&gt;
+  &lt;p&gt;E ai, achou uma merda? Curtiu? Não perde tempo man, deixa teu feedback ai :D&lt;/p&gt;
+  
+  				  mode: 0644
+  				  stats: [object Object]
+  				  collection: posts
+  				  previous: [object Object]
+  				  next: [object Object]
+  				  path: making-of
+  				  filename: /Applications/XAMPP/xamppfiles/htdocs/meu-blog/templates/post.hbt
+  				  data: true
+  				  knownHelpers: [object Object]
+  		</p> -->
   	<nav id="menubar" class="flip-top">
   		<ul class="container">
   			<li><a href="/index.html">Home</a></li>
