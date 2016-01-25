@@ -1,0 +1,557 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>
+  		
+  			Box Shadow e suas Magicas
+  	</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  	<link rel="canonical" href="http://clovisdasilvaneto.github.io" />
+  	<link rel="publisher" href="https://plus.google.com/u/0/107923948578708069647/posts"/>
+  	<meta property="og:locale" content="pt_BR" />
+  	<meta property="og:type" content="My blog and projects" />
+  	<meta property="og:title" content=" Box Shadow e suas Magicas" />
+  	<meta property="og:description" content="Após um bom tempo brincando, criando e desenhando formas com css, acabei descobrindo algumas técnicas bastantes interessantes e que podem ser aplicadas tanto em ilustrações como em web sites, sistemas ou portais." />
+  	<meta property="og:site_name" content="Clóvis Neto" />
+  	<meta property="og:image" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg" />
+  	<meta property="og:image:type" content="image/png">
+  	<meta name="twitter:card" content="summary_large_image"/>
+  	<meta name="twitter:title" content=" Box Shadow e suas Magicas"/>
+  	<meta name="twitter:site" content="@Clovissneto"/>
+  	<meta name="twitter:domain" content="Clóvis Neto"/>
+  	<meta name="twitter:image:src" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg"/>
+  	<meta name="description" content="Após um bom tempo brincando, criando e desenhando formas com css, acabei descobrindo algumas técnicas bastantes interessantes e que podem ser aplicadas tanto em ilustrações como em web sites, sistemas ou portais.">
+  	<meta name="keywords" content="css">
+  
+  	<link href="/css/prism.css" rel="stylesheet" />
+  	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,300' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="/css/github-repository.css">
+  	<link rel="stylesheet" href="/css/main.css">
+  
+  	<script>
+  	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  	  ga('create', 'UA-59584480-1', 'auto');
+  	  ga('send', 'pageview');
+  
+  	</script>
+  </head>
+  <body>
+  	<!-- <p>
+  		  posts: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+  				  projects: [object Object]
+  				  talks: [object Object],[object Object],[object Object],[object Object],[object Object]
+  				  collections: [object Object]
+  				  title: Box Shadow e suas Magicas
+  				  title_page: Box shadow e suas mágicas
+  				  template: post.hbt
+  				  date: Fri Jan 22 2016 21:00:00 GMT-0300 (BRT)
+  				  description: Após um bom tempo brincando, criando e desenhando formas com css, acabei descobrindo algumas técnicas bastantes interessantes e que podem ser aplicadas tanto em ilustrações como em web sites, sistemas ou portais.
+  				  author: Clóvis Neto.
+  				  tags: css
+  				  contents: &lt;p&gt;&lt;img src=&quot;/img/cssocker.jpg&quot; alt=&quot;CsSocker&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;Se você acompanha minhas postagens no twitter ou facebook, com certeza já ouviu falar de um joguinho que estou desenvolvendo apenas com css, onde nenhuma imagem será utilizada e nenhuma linha de javascript no código fonte será encontrada (apenas o do Google Analytics, claro :p).&lt;/p&gt;
+  &lt;h2 id=&quot;a-propriedade-box-shadow&quot;&gt;A propriedade box-shadow&lt;/h2&gt;
+  &lt;p&gt;Uma das &amp;quot;pseudo class&amp;quot; css que mais gosto e uso muito é a do estado de &lt;span class=&quot;code-note&quot;&gt;:hover&lt;/span&gt; e quando comecei a estudar a fundo a propriedade &lt;span class=&quot;code-note&quot;&gt;box-shadow&lt;/span&gt;, esses dois se incaixaram perfeitamente.&lt;/p&gt;
+  &lt;p&gt;Abaixo temos um exemplo bastante simples de como usar essas duas obras de artes:&lt;/p&gt;
+  &lt;style&gt;
+      .btn-simple {
+          width: 100px;
+          height: 100px;
+          margin: 30px auto;
+          text-align: center;
+          background: #2e9fff;
+          border-radius: 4px;
+          line-height: 100px;
+          cursor: pointer;
+          color: #fff;
+      }
+  
+      .trs-5 {
+          -webkit-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+          -moz-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+          -ms-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+          -o-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+          transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+      }
+  
+      #on-side {
+          box-shadow:inset 0 0 0 #00DFFF;
+      }
+  
+      #on-side:hover {
+          -webkit-transform:scale(1.2);
+          -ms-transform:scale(1.2);
+          -o-transform:scale(1.2);
+          -moz-transform:scale(1.2);
+          transform:scale(1.2);
+          box-shadow:inset 0 -100px 0 0 #00DFFF, 0 8px 6px -6px #000;
+      }
+  &lt;/style&gt;
+  
+  &lt;div class=&quot;btn-simple trs-5&quot; id=&quot;on-side&quot;&gt;Hover-me&lt;/div&gt;
+  
+  &lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;
+      .simple {
+          (...)
+          box-shadow:inset 0 0 0 #00DFFF;
+          -webkit-transition:all ease 0.5s, box-shadow ease 0.5s;
+          -moz-transition:all ease 0.5s, box-shadow ease 0.5s;
+          -ms-transition:all ease 0.5s, box-shadow ease 0.5s;
+          -o-transition:all ease 0.5s, box-shadow ease 0.5s;
+          transition:all ease 0.5s, box-shadow ease 0.5s;
+      }
+  
+      .simple:hover {
+          -webkit-transform:scale(1.2);
+          -ms-transform:scale(1.2);
+          -o-transform:scale(1.2);
+          -moz-transform:scale(1.2);
+          transform:scale(1.2);
+          box-shadow:inset 0 -100px 0 0 #00DFFF, 0 8px 6px -6px #000;
+      }
+  
+  &lt;/code&gt;&lt;/pre&gt;
+  
+  &lt;h4 id=&quot;o-problema&quot;&gt;O Problema&lt;/h4&gt;
+  &lt;p&gt;Após descobrir que para chegar ao resultado como o botão à cima, vários dev&amp;#39;s param e partem para aprender outras propriedades css, não se aprofundam em cada propriedade especifica, seu conhecimento sempre é superficial, por isso geralmente costumo dizer que ninguém sabe css, pois é fácil de mais.&lt;/p&gt;
+  &lt;p&gt;Para perceber algumas mágicas do box-shadow, vamos voltar um pouco no tempo...&lt;/p&gt;
+  &lt;h3 id=&quot;o-tempo-de-ag-ncia&quot;&gt;O tempo de agência&lt;/h3&gt;
+  &lt;p&gt;Lembra daquele tempo que você recebia os layouts malucos que o design fazia no photoshop em que o conteudo sempre iria ter dois bg&amp;#39;s que nunca se alinhavam em grid nenhum? Se não entendeu, veja a figura abaixo&lt;/p&gt;
+  &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+  &lt;center&gt;
+      &lt;img src=&quot;/img/layout-maluco.jpg&quot; alt=&quot;&quot;&gt;
+      &lt;p class=&quot;legend-text&quot;&gt;&lt;b&gt;Figura 1:&lt;/b&gt; Layout Maluco&lt;/p&gt;
+  &lt;/center&gt;
+  
+  &lt;p&gt;Agora lhe pergunto oque você fária para chegar a este resultado? Adicionaria uma div com &lt;span class=&quot;code-note&quot;&gt;position: absolute&lt;/span&gt;, né espertinho? Podemos chegar ao mesmo resultado com um html e css bem mais enxuto adicionando apenas um box-shadow e aumentando o padding do elemento:
+      &lt;/article&gt;
+  &lt;/section&gt;&lt;/p&gt;
+  &lt;style&gt;
+      .banner {
+          width: 100%;
+          height: 150px;
+          background: #2e73b9;
+          color: #fff;
+          font-weight: 400;
+          line-height: 150px;
+          font-size: 3em;
+          text-align: center;
+      }
+  
+      .content-crazy h2 {
+          font-weight: 400;
+      }
+  
+      .content-crazy {
+          border-top: solid 7px #f6f3f0;
+          padding: 2em 20em 4em 32em;
+          box-shadow: inset 470px 0 #2eb983;
+      }
+  
+      .content-crazy p {
+          font-size: 20px;
+      }
+  &lt;/style&gt;
+  
+  &lt;p&gt;&lt;h1 class=&quot;banner&quot;&gt;Meu layout maluco&lt;/h1&gt;&lt;/p&gt;
+  &lt;div class=&quot;content-crazy&quot;&gt;
+      &lt;h2&gt;Layout Maluco&lt;/h2&gt;
+      &lt;br&gt;
+      &lt;p&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &amp;#39;Content here, content here&amp;#39;, making it look like readable English. Many desktop publis&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;center&gt;
+      &lt;p class=&quot;legend-text&quot;&gt;&lt;b&gt;Figura 2:&lt;/b&gt; Layout maluco no código&lt;/p&gt;
+  &lt;/center&gt;
+  
+  &lt;section class=&quot;container&quot;&gt;
+      &lt;article&gt;
+  
+  &lt;pre&gt;&lt;code class=&quot;lang-markup&quot;&gt;
+      &amp;lt;h1 class=&amp;quot;banner&amp;quot;&amp;gt;Meu layout maluco&amp;lt;/h1&amp;gt;
+      &amp;lt;div class=&amp;quot;content-crazy&amp;quot;&amp;gt;
+          &amp;lt;h2&amp;gt;Layout Maluco&amp;lt;/h2&amp;gt;
+          &amp;lt;br&amp;gt;
+          &amp;lt;p&amp;gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &amp;#39;Content here, content here&amp;#39;, making it look like readable English. Many desktop publis&amp;lt;/p&amp;gt;
+      &amp;lt;/div&amp;gt;
+  &lt;/code&gt;&lt;/pre&gt;
+  
+  &lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;
+      .content-crazy {
+          (...)
+          padding: 2em 20em 4em 32em;
+          box-shadow: inset 470px 0 #2eb983;
+      }
+  &lt;/code&gt;&lt;/pre&gt;
+  
+  &lt;div class=&quot;note&quot;&gt;Perceba que acrescentamos apenas duas linhas no css.&lt;/div&gt;
+  
+  &lt;h3 id=&quot;d-plicar-formas&quot;&gt;Dúplicar formas&lt;/h3&gt;
+  &lt;p&gt;Outra técnica bastante &amp;quot;show&amp;quot;, é a possibilidade de dúplicar elementos apartir da sua forma original. Um exemplo bem objetivo é as nuvens do CsSocker, onde desenho um círculo e dúplico o mesmo para que as suas réplicas formem uma nuvem. &lt;/p&gt;
+  &lt;p&gt;Abaixo 3 simples passos para formar uma nuvem pequena:&lt;/p&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+      .circle {
+          background: #2e9fff;
+          width: 100px;
+          height: 100px;
+          border-radius: 100%;
+          margin: 30px auto;
+      }
+  &lt;/style&gt;
+  
+  &lt;div class=&quot;circle&quot;&gt;
+  &lt;/div&gt;
+  
+  &lt;center&gt;
+      &lt;p class=&quot;legend-text&quot;&gt;&lt;b&gt;Figura 3:&lt;/b&gt; Circulo&lt;/p&gt;
+  &lt;/center&gt;
+  
+  &lt;p&gt;&lt;br&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+  Réplicando com a propriedade box-shadow podemos chegar a uma nuvem amigável:&lt;/p&gt;
+  &lt;style&gt;
+      .shadow {
+          box-shadow: 63px -14px 0 #2e9fff;
+          -webkit-transform: translateX(-70px);
+          -moz-transform: translateX(-70px);
+          -ms-transform: translateX(-70px);
+          -o-transform: translateX(-70px);
+          transform: translateX(-70px);
+      }
+  &lt;/style&gt;
+  
+  &lt;div class=&quot;circle shadow&quot;&gt;
+  &lt;/div&gt;
+  
+  &lt;center&gt;
+      &lt;p class=&quot;legend-text&quot;&gt;&lt;b&gt;Figura 4:&lt;/b&gt; Circulos formando uma nuvem&lt;/p&gt;
+      &lt;br&gt;
+  &lt;/center&gt;
+  
+  &lt;style&gt;
+      .nuvem {
+          box-shadow:63px -14px 0 #2e9fff, 123px 0px 0 #2e9fff, 63px 10px 0 #2e9fff;
+          -webkit-transform: translateX(-70px);
+          -moz-transform: translateX(-70px);
+          -ms-transform: translateX(-70px);
+          -o-transform: translateX(-70px);
+          transform: translateX(-70px);
+      }
+  &lt;/style&gt;
+  
+  
+  &lt;div class=&quot;circle nuvem&quot;&gt;
+  &lt;/div&gt;
+  
+  &lt;center&gt;
+      &lt;p class=&quot;legend-text&quot;&gt;&lt;b&gt;Figura 5:&lt;/b&gt; Nuvem formada a partir de box-shadow&lt;/p&gt;
+      &lt;br&gt;
+  &lt;/center&gt;
+  
+  &lt;p&gt;&lt;div class=&quot;note&quot;&gt;
+      Muitos elementos do CsSocker foram feitos a partir desta técnica de réplicação, como exemplo temos também as cercas do campo que estão por trás das barras.
+  &lt;/div&gt;
+  &lt;br&gt;
+  &lt;br&gt;&lt;/p&gt;
+  &lt;p&gt;Um exemplo fantástico é a &lt;a href=&quot;http://codepen.io/jaysalvat/pen/HaqBf&quot; target=&quot;_blank&quot;&gt;monaliza em css&lt;/a&gt;, que foi feito a partir de um conversor de imagens para css. Note que os traços gerados da pintura, foram todos criados por meio do &lt;span class=&quot;code-note&quot;&gt;box-shadow&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;Seguindo este conceito, podemos chegar a resultados incríveis... É só usar a imaginação!&lt;/p&gt;
+  &lt;p&gt;Sobre o CsSocker, eu ainda não terminei mas irei criar vários posts relacionados a ele e ao desenvolvimento de jogos com css ;) &lt;/p&gt;
+  &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;i&gt;Fiquem ligados!! (y)&lt;/i&gt;&lt;/p&gt;
+  
+  				  mode: 0644
+  				  stats: [object Object]
+  				  collection: posts
+  				  next: [object Object]
+  				  path: box-shadow-e-suas-magicas
+  				  filename: /Applications/XAMPP/xamppfiles/htdocs/meu-blog/templates/post.hbt
+  				  data: true
+  				  knownHelpers: [object Object]
+  		</p> -->
+  	<nav id="menubar" class="flip-top">
+  		<ul class="container">
+  			<li><a href="/index.html">Home</a></li>
+  			<li><a href="/about">About</a></li>
+  			<li><a href="/my-blog">Blog</a></li>
+  			<li><a href="/projects">Projects</a></li>
+  			<li><a href="/talk-and-cases">Talk and Cases</a></li>
+  			<li class="socials"><a target="_blank" href="https://codepen.io/clovisneto/"><i class="fa fa-codepen"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://github.com/clovisdasilvaneto"><i class="fa fa-github"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://twitter.com/Clovissneto"><i class="fa fa-twitter"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://www.facebook.com/ClovisDaSilvaNeto"><i class="fa fa-facebook"></i></a></li>
+  		</ul>
+  
+  
+  		<label for="menu-mobile" class="mobile">
+  			<span></span>
+  			<span></span>
+  			<span></span>
+  
+  			<select id="menu-mobile">
+  				<option value="/index.html">Home</option>
+  				<option value="/about">About</option>
+  				<option value="/my-blog.md">Blog</option>
+  				<option value="/projects">Projects</option>
+  				<option value="/talk-and-cases">Talk and Cases</option>
+  				<option value="#" selected>Voltar</option>
+  			</select>
+  		</label>
+  	</nav>
+
+<header class="wrapper">
+	<div class="container">
+		<time datetime="January 22, 2016">January 22, 2016</time>
+		<h1>Box shadow e suas mágicas</h1>
+		<h2>Após um bom tempo brincando, criando e desenhando formas com css, acabei descobrindo algumas técnicas bastantes interessantes e que podem ser aplicadas tanto em ilustrações como em web sites, sistemas ou portais.</h2>
+	</div>
+</header>
+
+<section class="container">
+	<article>
+	    <b>Tags:</b>
+	           <a href="/tags/css.html" class="code" title="Posts sobre css">css</a>
+		
+		<br>
+		<br>
+
+	    <p><img src="/img/cssocker.jpg" alt="CsSocker"></p>
+<p>Se você acompanha minhas postagens no twitter ou facebook, com certeza já ouviu falar de um joguinho que estou desenvolvendo apenas com css, onde nenhuma imagem será utilizada e nenhuma linha de javascript no código fonte será encontrada (apenas o do Google Analytics, claro :p).</p>
+<h2 id="a-propriedade-box-shadow">A propriedade box-shadow</h2>
+<p>Uma das &quot;pseudo class&quot; css que mais gosto e uso muito é a do estado de <span class="code-note">:hover</span> e quando comecei a estudar a fundo a propriedade <span class="code-note">box-shadow</span>, esses dois se incaixaram perfeitamente.</p>
+<p>Abaixo temos um exemplo bastante simples de como usar essas duas obras de artes:</p>
+<style>
+    .btn-simple {
+        width: 100px;
+        height: 100px;
+        margin: 30px auto;
+        text-align: center;
+        background: #2e9fff;
+        border-radius: 4px;
+        line-height: 100px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .trs-5 {
+        -webkit-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+        -moz-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+        -ms-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+        -o-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+        transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+    }
+
+    #on-side {
+        box-shadow:inset 0 0 0 #00DFFF;
+    }
+
+    #on-side:hover {
+        -webkit-transform:scale(1.2);
+        -ms-transform:scale(1.2);
+        -o-transform:scale(1.2);
+        -moz-transform:scale(1.2);
+        transform:scale(1.2);
+        box-shadow:inset 0 -100px 0 0 #00DFFF, 0 8px 6px -6px #000;
+    }
+</style>
+
+<div class="btn-simple trs-5" id="on-side">Hover-me</div>
+
+<pre><code class="lang-css">
+    .simple {
+        (...)
+        box-shadow:inset 0 0 0 #00DFFF;
+        -webkit-transition:all ease 0.5s, box-shadow ease 0.5s;
+        -moz-transition:all ease 0.5s, box-shadow ease 0.5s;
+        -ms-transition:all ease 0.5s, box-shadow ease 0.5s;
+        -o-transition:all ease 0.5s, box-shadow ease 0.5s;
+        transition:all ease 0.5s, box-shadow ease 0.5s;
+    }
+
+    .simple:hover {
+        -webkit-transform:scale(1.2);
+        -ms-transform:scale(1.2);
+        -o-transform:scale(1.2);
+        -moz-transform:scale(1.2);
+        transform:scale(1.2);
+        box-shadow:inset 0 -100px 0 0 #00DFFF, 0 8px 6px -6px #000;
+    }
+
+</code></pre>
+
+<h4 id="o-problema">O Problema</h4>
+<p>Após descobrir que para chegar ao resultado como o botão à cima, vários dev&#39;s param e partem para aprender outras propriedades css, não se aprofundam em cada propriedade especifica, seu conhecimento sempre é superficial, por isso geralmente costumo dizer que ninguém sabe css, pois é fácil de mais.</p>
+<p>Para perceber algumas mágicas do box-shadow, vamos voltar um pouco no tempo...</p>
+<h3 id="o-tempo-de-ag-ncia">O tempo de agência</h3>
+<p>Lembra daquele tempo que você recebia os layouts malucos que o design fazia no photoshop em que o conteudo sempre iria ter dois bg&#39;s que nunca se alinhavam em grid nenhum? Se não entendeu, veja a figura abaixo</p>
+<p><br></p>
+<center>
+    <img src="/img/layout-maluco.jpg" alt="">
+    <p class="legend-text"><b>Figura 1:</b> Layout Maluco</p>
+</center>
+
+<p>Agora lhe pergunto oque você fária para chegar a este resultado? Adicionaria uma div com <span class="code-note">position: absolute</span>, né espertinho? Podemos chegar ao mesmo resultado com um html e css bem mais enxuto adicionando apenas um box-shadow e aumentando o padding do elemento:
+    </article>
+</section></p>
+<style>
+    .banner {
+        width: 100%;
+        height: 150px;
+        background: #2e73b9;
+        color: #fff;
+        font-weight: 400;
+        line-height: 150px;
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .content-crazy h2 {
+        font-weight: 400;
+    }
+
+    .content-crazy {
+        border-top: solid 7px #f6f3f0;
+        padding: 2em 20em 4em 32em;
+        box-shadow: inset 470px 0 #2eb983;
+    }
+
+    .content-crazy p {
+        font-size: 20px;
+    }
+</style>
+
+<p><h1 class="banner">Meu layout maluco</h1></p>
+<div class="content-crazy">
+    <h2>Layout Maluco</h2>
+    <br>
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publis</p>
+</div>
+<center>
+    <p class="legend-text"><b>Figura 2:</b> Layout maluco no código</p>
+</center>
+
+<section class="container">
+    <article>
+
+<pre><code class="lang-markup">
+    &lt;h1 class=&quot;banner&quot;&gt;Meu layout maluco&lt;/h1&gt;
+    &lt;div class=&quot;content-crazy&quot;&gt;
+        &lt;h2&gt;Layout Maluco&lt;/h2&gt;
+        &lt;br&gt;
+        &lt;p&gt;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publis&lt;/p&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<pre><code class="lang-css">
+    .content-crazy {
+        (...)
+        padding: 2em 20em 4em 32em;
+        box-shadow: inset 470px 0 #2eb983;
+    }
+</code></pre>
+
+<div class="note">Perceba que acrescentamos apenas duas linhas no css.</div>
+
+<h3 id="d-plicar-formas">Dúplicar formas</h3>
+<p>Outra técnica bastante &quot;show&quot;, é a possibilidade de dúplicar elementos apartir da sua forma original. Um exemplo bem objetivo é as nuvens do CsSocker, onde desenho um círculo e dúplico o mesmo para que as suas réplicas formem uma nuvem. </p>
+<p>Abaixo 3 simples passos para formar uma nuvem pequena:</p>
+<style type="text/css">
+    .circle {
+        background: #2e9fff;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        margin: 30px auto;
+    }
+</style>
+
+<div class="circle">
+</div>
+
+<center>
+    <p class="legend-text"><b>Figura 3:</b> Circulo</p>
+</center>
+
+<p><br>
+<br>
+<br>
+Réplicando com a propriedade box-shadow podemos chegar a uma nuvem amigável:</p>
+<style>
+    .shadow {
+        box-shadow: 63px -14px 0 #2e9fff;
+        -webkit-transform: translateX(-70px);
+        -moz-transform: translateX(-70px);
+        -ms-transform: translateX(-70px);
+        -o-transform: translateX(-70px);
+        transform: translateX(-70px);
+    }
+</style>
+
+<div class="circle shadow">
+</div>
+
+<center>
+    <p class="legend-text"><b>Figura 4:</b> Circulos formando uma nuvem</p>
+    <br>
+</center>
+
+<style>
+    .nuvem {
+        box-shadow:63px -14px 0 #2e9fff, 123px 0px 0 #2e9fff, 63px 10px 0 #2e9fff;
+        -webkit-transform: translateX(-70px);
+        -moz-transform: translateX(-70px);
+        -ms-transform: translateX(-70px);
+        -o-transform: translateX(-70px);
+        transform: translateX(-70px);
+    }
+</style>
+
+
+<div class="circle nuvem">
+</div>
+
+<center>
+    <p class="legend-text"><b>Figura 5:</b> Nuvem formada a partir de box-shadow</p>
+    <br>
+</center>
+
+<p><div class="note">
+    Muitos elementos do CsSocker foram feitos a partir desta técnica de réplicação, como exemplo temos também as cercas do campo que estão por trás das barras.
+</div>
+<br>
+<br></p>
+<p>Um exemplo fantástico é a <a href="http://codepen.io/jaysalvat/pen/HaqBf" target="_blank">monaliza em css</a>, que foi feito a partir de um conversor de imagens para css. Note que os traços gerados da pintura, foram todos criados por meio do <span class="code-note">box-shadow</span></p>
+<p>Seguindo este conceito, podemos chegar a resultados incríveis... É só usar a imaginação!</p>
+<p>Sobre o CsSocker, eu ainda não terminei mas irei criar vários posts relacionados a ele e ao desenvolvimento de jogos com css ;) </p>
+<p><br></p>
+<p><i>Fiquem ligados!! (y)</i></p>
+
+	</article>
+	  <footer>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES * * */
+	        var disqus_shortname = 'clovisnetoblog';
+	        
+	        /* * * DON'T EDIT BELOW THIS LINE * * */
+	        (function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
+	    </script>
+	    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	    </footer>
+</section>
+
+	<script src="/js/prism.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>
