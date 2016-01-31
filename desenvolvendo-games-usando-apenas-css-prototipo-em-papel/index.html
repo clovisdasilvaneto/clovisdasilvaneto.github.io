@@ -1,0 +1,211 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>
+  		
+  			Desenvolvendo games usando apenas css - Prototipo em papel
+  	</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	
+  	<link rel="publisher" href="https://plus.google.com/u/0/107923948578708069647/posts"/>
+  	<meta property="og:locale" content="pt_BR" />
+  	<meta property="og:type" content="My blog and projects" />
+  	<meta property="og:title" content=" Desenvolvendo games usando apenas css - Prototipo em papel" />
+  	<meta property="og:description" content="Faaala galeeeeeeera! No post anterior, mencionei que iria criar uma série relacionada a criação do desenvolvimento de games usando apenas css e claro, inspirado no CsSocker." />
+  	<meta property="og:site_name" content="Clóvis Neto" />
+  	<meta property="og:image" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg" />
+  	<meta property="og:image:type" content="image/png">
+  	<meta name="twitter:card" content="summary_large_image"/>
+  	<meta name="twitter:title" content=" Desenvolvendo games usando apenas css - Prototipo em papel"/>
+  	<meta name="twitter:site" content="@Clovissneto"/>
+  	<meta name="twitter:domain" content="Clóvis Neto"/>
+  	<meta name="twitter:image:src" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg"/>
+  	<meta name="description" content="Faaala galeeeeeeera! No post anterior, mencionei que iria criar uma série relacionada a criação do desenvolvimento de games usando apenas css e claro, inspirado no CsSocker.">
+  	<meta name="keywords" content="css,life,desenvolvimento-de-games">
+  
+  	<link href="/css/prism.css" rel="stylesheet" />
+  	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,300' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="/css/github-repository.css">
+  	<link rel="stylesheet" href="/css/main.css">
+  
+  	<script>
+  	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  	  ga('create', 'UA-59584480-1', 'auto');
+  	  ga('send', 'pageview');
+  
+  	</script>
+  </head>
+  <body>
+  	<!-- <p>
+  		  posts: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+  				  projects: [object Object]
+  				  talks: [object Object],[object Object],[object Object],[object Object],[object Object]
+  				  collections: [object Object]
+  				  title: Desenvolvendo games usando apenas css - Prototipo em papel
+  				  title_page: Desenvolvendo games usando apenas CSS - Protótipo em papel
+  				  template: post.hbt
+  				  date: Wed Dec 23 2015 21:00:00 GMT-0300 (BRT)
+  				  description: Faaala galeeeeeeera! No post anterior, mencionei que iria criar uma série relacionada a criação do desenvolvimento de games usando apenas css e claro, inspirado no CsSocker.
+  				  author: Clóvis Neto.
+  				  tags: css,life,desenvolvimento-de-games
+  				  contents: &lt;p&gt;Após receber vários feedbacks positivos no post &lt;a href=&quot;http://clovisdasilvaneto.github.io/box-shadow-e-suas-magicas/&quot;&gt;box shadow e suas mágicas&lt;/a&gt;, resolvi criar coragem e iniciei o primeiro post da série &lt;b&gt;Desenvolvendo games usando apenas CSS&lt;/b&gt;.&lt;/p&gt;
+  &lt;p&gt;Iremos começar por algo que não pode faltar em nenhum projeto...&lt;/p&gt;
+  &lt;h2 id=&quot;a-prot-tipa-o-em-papel&quot;&gt;A protótipação em papel&lt;/h2&gt;
+  &lt;p&gt;Quando tive a idéia de criar o CsSocker, minha primeira reação foi ir logo para o &lt;a href=&quot;https://www.sublimetext.com/&quot;&gt;Sublime Text&lt;/a&gt; para começar a programar. Depois parei e pensei: &amp;quot;Calma Clóvis, se for começar deste jeito, sem nenhuma organização, sempre vai dar em merda&amp;quot;. Logo me acalmei e fui pesquisar sobre organização de projetos.&lt;/p&gt;
+  &lt;p&gt;Lendo alguns artigos descobri algo que já esperava, toda boa idéia deve ser prótotipada em um papel e se você é um dev bastante preguiçoso para escrever, assim como eu sou, também vai se perguntar: &amp;quot;pra que isso?&amp;quot; mas calma que ao final do seu projeto você verá que o seu protótipo contribuiu bastante.&lt;/p&gt;
+  &lt;p&gt;Abaixo um exemplo do rascunho de um dos estágios do CsSocker e seu resultado :)
+  &lt;br&gt;&lt;/p&gt;
+  &lt;center&gt;
+      &lt;img src=&quot;https://scontent-gru2-1.xx.fbcdn.net/hphotos-xpt1/l/t31.0-8/12605443_813321398795394_5978008811406364335_o.jpg&quot; alt=&quot;&quot;&gt;
+      &lt;p class=&quot;legend-text&quot;&gt;&lt;b&gt;Figura 1:&lt;/b&gt; CsSocker rascunho e resultado final&lt;/p&gt;
+  &lt;/center&gt;
+  
+  &lt;h2 id=&quot;o-come-o&quot;&gt;O começo&lt;/h2&gt;
+  &lt;p&gt;Nosso joguinho terá 8 fases, e será um jogo de achados e perdidos, onde teremos as seguintes telas: &lt;/p&gt;
+  &lt;ul&gt;
+  &lt;li&gt;Pré-loader&lt;/li&gt;
+  &lt;li&gt;Menu inicial&lt;/li&gt;
+  &lt;li&gt;Instruções&lt;/li&gt;
+  &lt;li&gt;Mapa contendo os estágios&lt;/li&gt;
+  &lt;li&gt;fase 1&lt;/li&gt;
+  &lt;li&gt;fase 2&lt;/li&gt;
+  &lt;li&gt;fase 3&lt;/li&gt;
+  &lt;li&gt;fase 4&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;Separe uma folha para cada fase e use sua criatividade :D&lt;/p&gt;
+  &lt;p&gt;Eu não sou muito bom em desenhos a mão mas tomei coragem e compartilhei abaixo minha tela de pré-loader rsrsrs... &lt;/p&gt;
+  &lt;center&gt;
+      &lt;img src=&quot;https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xtf1/t31.0-8/12628517_817446055049595_101601154433195896_o.jpg&quot; alt=&quot;Tesouros perdidos na Yoshi Island&quot; class=&quot;img-border small-thumbnail&quot;&gt;
+  &lt;/center&gt;
+  
+  &lt;div class=&quot;note&quot;&gt;
+      O nosso jogo terá o nome de &amp;quot;&lt;b&gt;Tesouros perdidos na Yoshi Island&lt;/b&gt;&amp;quot;
+  &lt;/div&gt;
+  
+  &lt;p&gt;Bem pessoal, por hoje é só, espero que tenham gostado deste primeiro post da nossa série e aguardem que em breve estarei trazendo mais novidades.&lt;/p&gt;
+  
+  				  mode: 0644
+  				  stats: [object Object]
+  				  collection: posts
+  				  previous: [object Object]
+  				  next: [object Object]
+  				  path: desenvolvendo-games-usando-apenas-css-prototipo-em-papel
+  				  filename: /Applications/XAMPP/xamppfiles/htdocs/meu-blog/templates/post.hbt
+  				  data: true
+  				  knownHelpers: [object Object]
+  		</p> -->
+  	<nav id="menubar" class="flip-top">
+  		<ul class="container">
+  			<li><a href="/index.html">Home</a></li>
+  			<li><a href="/about">About</a></li>
+  			<li><a href="/my-blog">Blog</a></li>
+  			<li><a href="/projects">Projects</a></li>
+  			<li><a href="/talk-and-cases">Talk and Cases</a></li>
+  			<li class="socials"><a target="_blank" href="https://codepen.io/clovisneto/"><i class="fa fa-codepen"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://github.com/clovisdasilvaneto"><i class="fa fa-github"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://twitter.com/Clovissneto"><i class="fa fa-twitter"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://www.facebook.com/ClovisDaSilvaNeto"><i class="fa fa-facebook"></i></a></li>
+  		</ul>
+  
+  
+  		<label for="menu-mobile" class="mobile">
+  			<span></span>
+  			<span></span>
+  			<span></span>
+  
+  			<select id="menu-mobile">
+  				<option value="/index.html">Home</option>
+  				<option value="/about">About</option>
+  				<option value="/my-blog.md">Blog</option>
+  				<option value="/projects">Projects</option>
+  				<option value="/talk-and-cases">Talk and Cases</option>
+  				<option value="#" selected>Voltar</option>
+  			</select>
+  		</label>
+  	</nav>
+
+<header class="wrapper">
+	<div class="container">
+		<time datetime="December 23, 2015">December 23, 2015</time>
+		<h1>Desenvolvendo games usando apenas CSS - Protótipo em papel</h1>
+		<h2>Faaala galeeeeeeera! No post anterior, mencionei que iria criar uma série relacionada a criação do desenvolvimento de games usando apenas css e claro, inspirado no CsSocker.</h2>
+	</div>
+</header>
+
+<section class="container">
+	<article>
+	    <b>Tags:</b>
+	           <a href="/tags/css.html" class="code" title="Posts sobre css">css</a>
+
+	           <a href="/tags/life.html" class="code" title="Posts sobre life">life</a>
+
+	           <a href="/tags/desenvolvimento-de-games.html" class="code" title="Posts sobre desenvolvimento-de-games">desenvolvimento-de-games</a>
+		
+		<br>
+		<br>
+
+	    <p>Após receber vários feedbacks positivos no post <a href="http://clovisdasilvaneto.github.io/box-shadow-e-suas-magicas/">box shadow e suas mágicas</a>, resolvi criar coragem e iniciei o primeiro post da série <b>Desenvolvendo games usando apenas CSS</b>.</p>
+<p>Iremos começar por algo que não pode faltar em nenhum projeto...</p>
+<h2 id="a-prot-tipa-o-em-papel">A protótipação em papel</h2>
+<p>Quando tive a idéia de criar o CsSocker, minha primeira reação foi ir logo para o <a href="https://www.sublimetext.com/">Sublime Text</a> para começar a programar. Depois parei e pensei: &quot;Calma Clóvis, se for começar deste jeito, sem nenhuma organização, sempre vai dar em merda&quot;. Logo me acalmei e fui pesquisar sobre organização de projetos.</p>
+<p>Lendo alguns artigos descobri algo que já esperava, toda boa idéia deve ser prótotipada em um papel e se você é um dev bastante preguiçoso para escrever, assim como eu sou, também vai se perguntar: &quot;pra que isso?&quot; mas calma que ao final do seu projeto você verá que o seu protótipo contribuiu bastante.</p>
+<p>Abaixo um exemplo do rascunho de um dos estágios do CsSocker e seu resultado :)
+<br></p>
+<center>
+    <img src="https://scontent-gru2-1.xx.fbcdn.net/hphotos-xpt1/l/t31.0-8/12605443_813321398795394_5978008811406364335_o.jpg" alt="">
+    <p class="legend-text"><b>Figura 1:</b> CsSocker rascunho e resultado final</p>
+</center>
+
+<h2 id="o-come-o">O começo</h2>
+<p>Nosso joguinho terá 8 fases, e será um jogo de achados e perdidos, onde teremos as seguintes telas: </p>
+<ul>
+<li>Pré-loader</li>
+<li>Menu inicial</li>
+<li>Instruções</li>
+<li>Mapa contendo os estágios</li>
+<li>fase 1</li>
+<li>fase 2</li>
+<li>fase 3</li>
+<li>fase 4</li>
+</ul>
+<p>Separe uma folha para cada fase e use sua criatividade :D</p>
+<p>Eu não sou muito bom em desenhos a mão mas tomei coragem e compartilhei abaixo minha tela de pré-loader rsrsrs... </p>
+<center>
+    <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xtf1/t31.0-8/12628517_817446055049595_101601154433195896_o.jpg" alt="Tesouros perdidos na Yoshi Island" class="img-border small-thumbnail">
+</center>
+
+<div class="note">
+    O nosso jogo terá o nome de &quot;<b>Tesouros perdidos na Yoshi Island</b>&quot;
+</div>
+
+<p>Bem pessoal, por hoje é só, espero que tenham gostado deste primeiro post da nossa série e aguardem que em breve estarei trazendo mais novidades.</p>
+
+	</article>
+	  <footer>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES * * */
+	        var disqus_shortname = 'clovisnetoblog';
+	        
+	        /* * * DON'T EDIT BELOW THIS LINE * * */
+	        (function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
+	    </script>
+	    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	    </footer>
+</section>
+
+	<script src="/js/prism.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>
