@@ -71,18 +71,18 @@
   &lt;p&gt;Com esta situação nos deparamos com 3 perfis de desenvolvedores:&lt;/p&gt;
   &lt;ul&gt;
   &lt;li&gt;&lt;b&gt;O amador&lt;/b&gt; - Vai logo procurar um plugin jQuery pra chegar ao resultado final.&lt;/li&gt;
-  &lt;li&gt;&lt;b&gt;O famozo &amp;quot;faz na mão&amp;quot;&lt;/b&gt; - Ele sabe que este efeito é simples e não precisa de nenhum plugin, nem mesmo de jQuery... Faz com javascript puro.&lt;/li&gt;
-  &lt;li&gt;&lt;b&gt;O &amp;#39;Show Man&amp;#39;&lt;/b&gt; - Você! O &lt;strike&gt;dev muito foda, que sempre está na ativa lendo meu blog,&lt;/strike&gt; dev &amp;quot;fock-you&amp;quot; que acabou notando que não é preciso usar essa dinámica toda para poder obter o resultado final, ousou-se desafiar e fazer com CSS.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;O famoso &amp;quot;faz na mão&amp;quot;&lt;/b&gt; - Ele sabe que este efeito é simples e não precisa de nenhum plugin, nem mesmo de jQuery... Faz com javascript puro.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;O &amp;#39;Show Man&amp;#39;&lt;/b&gt; - Você! O &lt;strike&gt;dev muito foda, que sempre está na ativa lendo meu blog,&lt;/strike&gt; dev &amp;quot;fuck-you&amp;quot; que acabou notando que não é preciso usar essa dinâmica toda para poder obter o resultado final, ousou desafiar-se e fazer com CSS.&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;p&gt;O menu citado à cima pode ser obtido no exemplo que desenvolvi em meu codepen abaixo&lt;/p&gt;
+  &lt;p&gt;O menu citado acima pode ser obtido no exemplo que desenvolvi em meu codepen abaixo&lt;/p&gt;
   &lt;center&gt;
       &lt;p data-height=&quot;268&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;zrmgmr&quot; data-default-tab=&quot;result&quot; data-user=&quot;clovisneto&quot; class=&#x27;codepen&#x27;&gt;See the Pen &lt;a href=&#x27;http://codepen.io/clovisneto/pen/zrmgmr/&#x27;&gt;Pure CSS menu-follow&lt;/a&gt; by clovis neto (&lt;a href=&#x27;http://codepen.io/clovisneto&#x27;&gt;@clovisneto&lt;/a&gt;) on &lt;a href=&#x27;http://codepen.io&#x27;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
       &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
   &lt;/center&gt;
   
   &lt;p&gt;Não irei explicar detalhadamente para não desfocarmos o assunto do post, mas note que todas animações no exemplo citado foram feitas com css.
-  Básicamente ultilizei as técnicas de &lt;span class=&quot;code&quot;&gt;:hover&lt;/span&gt;, &lt;span class=&quot;code&quot;&gt;:after&lt;/span&gt; e &lt;span class=&quot;code&quot;&gt;:before&lt;/span&gt;, além de usar e abusar do seletor de irmão, o: &lt;span class=&quot;code&quot;&gt;~&lt;/span&gt; (til).&lt;/p&gt;
-  &lt;p&gt;Voltando para o menu off canvas, o mesmo efeito podemos obter usando a técnica de :checked ou :target, eu particulamente prefiro o :checked por não dar merda na sua página, caso a mesma seja single page application... Vejamos a baixo como criar o menu off canvas com CSS REALMENTE: &lt;/p&gt;
+  Básicamente utilizei as técnicas de &lt;span class=&quot;code&quot;&gt;:hover&lt;/span&gt;, &lt;span class=&quot;code&quot;&gt;:after&lt;/span&gt; e &lt;span class=&quot;code&quot;&gt;:before&lt;/span&gt;, além de usar e abusar do seletor de irmão, o: &lt;span class=&quot;code&quot;&gt;~&lt;/span&gt; (til).&lt;/p&gt;
+  &lt;p&gt;Voltando para o menu off canvas, o mesmo efeito podemos obter usando a técnica de :checked ou :target, eu particulamente prefiro o :checked por não dar merda na sua página, caso a mesma seja single page application... Vejamos abaixo como criar o menu off canvas com CSS REALMENTE: &lt;/p&gt;
   &lt;p&gt;&lt;b&gt;Estrutura HTML: &lt;/b&gt;&lt;/p&gt;
   &lt;pre&gt;&lt;code class=&quot;lang-markup&quot;&gt;
       &amp;lt;input type=&quot;checkbox&quot; id=&quot;menu&quot; hidden&amp;gt;
@@ -101,13 +101,13 @@
           &amp;lt;/label&amp;gt;
   
           &amp;lt;h1&amp;gt;Olá mundo, eu sou um dev &quot;Show Man&quot;&amp;lt;/h1&amp;gt;
-          &amp;lt;p&amp;gt;Abra o menu à cima e veja como podemos criar um menu off canvas usando apenas CSS3&amp;lt;/p&amp;gt;
+          &amp;lt;p&amp;gt;Abra o menu acima e veja como podemos criar um menu off canvas usando apenas CSS3&amp;lt;/p&amp;gt;
   
           &amp;lt;footer&amp;gt;Developer by &amp;lt;a href=&quot;http://clovisdasilvaneto.github.io&quot;&amp;gt;Clóvis Neto&amp;lt;/a&amp;gt; &amp;lt;/footer&amp;gt;
       &amp;lt;/section&amp;gt;
   &lt;/code&gt;&lt;/pre&gt;
   
-  &lt;p&gt;Usamos o checkbox para podermos obter a ação de clique do usuario, afim de pegar o canvas e mover no eixo X...&lt;/p&gt;
+  &lt;p&gt;Usamos o checkbox para podermos obter a ação de clique do usuário, afim de pegar o canvas e mover no eixo X...&lt;/p&gt;
   &lt;div class=&quot;note&quot;&gt;Incluí também a fonte &amp;#39;Raleway&amp;#39; do Google Fonts e a Font Awesome para dar um toque mais bonito ao nosso exemplo... &lt;em&gt;Note que um pouco de acessibilidade não faz mal a ninguém...&lt;/em&gt;&lt;/div&gt;
   
   &lt;p&gt;&lt;b&gt;Logo aplicando o CSS abaixo:&lt;/b&gt;&lt;/p&gt;
@@ -239,7 +239,7 @@
           transform: translateX(300px);
       }
   &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/pre&gt;&lt;/code&gt;&lt;/p&gt;
-  &lt;p&gt;Teriamos o resultado abaixo, vale apena observar a técnica da pseudo classe &lt;span class=&quot;code&quot;&gt;:checked&lt;/span&gt; que é oque nos faz definir o estado do nosso canvas.&lt;/p&gt;
+  &lt;p&gt;Teriamos o resultado abaixo, vale à pena observar a técnica da pseudo classe &lt;span class=&quot;code&quot;&gt;:checked&lt;/span&gt; que é o que nos faz definir o estado do nosso canvas.&lt;/p&gt;
   &lt;p&gt;&lt;p data-height=&quot;468&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;zrMOKZ&quot; data-default-tab=&quot;result&quot; data-user=&quot;clovisneto&quot; class=&#x27;codepen&#x27;&gt;See the Pen &lt;a href=&#x27;http://codepen.io/clovisneto/pen/zrMOKZ/&#x27;&gt;Beautiful Off Canvas Menu&lt;/a&gt; by clovis neto (&lt;a href=&#x27;http://codepen.io/clovisneto&#x27;&gt;@clovisneto&lt;/a&gt;) on &lt;a href=&#x27;http://codepen.io&#x27;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
   &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
   
@@ -321,18 +321,18 @@
 <p>Com esta situação nos deparamos com 3 perfis de desenvolvedores:</p>
 <ul>
 <li><b>O amador</b> - Vai logo procurar um plugin jQuery pra chegar ao resultado final.</li>
-<li><b>O famozo &quot;faz na mão&quot;</b> - Ele sabe que este efeito é simples e não precisa de nenhum plugin, nem mesmo de jQuery... Faz com javascript puro.</li>
-<li><b>O &#39;Show Man&#39;</b> - Você! O <strike>dev muito foda, que sempre está na ativa lendo meu blog,</strike> dev &quot;fock-you&quot; que acabou notando que não é preciso usar essa dinámica toda para poder obter o resultado final, ousou-se desafiar e fazer com CSS.</li>
+<li><b>O famoso &quot;faz na mão&quot;</b> - Ele sabe que este efeito é simples e não precisa de nenhum plugin, nem mesmo de jQuery... Faz com javascript puro.</li>
+<li><b>O &#39;Show Man&#39;</b> - Você! O <strike>dev muito foda, que sempre está na ativa lendo meu blog,</strike> dev &quot;fuck-you&quot; que acabou notando que não é preciso usar essa dinâmica toda para poder obter o resultado final, ousou desafiar-se e fazer com CSS.</li>
 </ul>
-<p>O menu citado à cima pode ser obtido no exemplo que desenvolvi em meu codepen abaixo</p>
+<p>O menu citado acima pode ser obtido no exemplo que desenvolvi em meu codepen abaixo</p>
 <center>
     <p data-height="268" data-theme-id="0" data-slug-hash="zrmgmr" data-default-tab="result" data-user="clovisneto" class='codepen'>See the Pen <a href='http://codepen.io/clovisneto/pen/zrmgmr/'>Pure CSS menu-follow</a> by clovis neto (<a href='http://codepen.io/clovisneto'>@clovisneto</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
     <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 </center>
 
 <p>Não irei explicar detalhadamente para não desfocarmos o assunto do post, mas note que todas animações no exemplo citado foram feitas com css.
-Básicamente ultilizei as técnicas de <span class="code">:hover</span>, <span class="code">:after</span> e <span class="code">:before</span>, além de usar e abusar do seletor de irmão, o: <span class="code">~</span> (til).</p>
-<p>Voltando para o menu off canvas, o mesmo efeito podemos obter usando a técnica de :checked ou :target, eu particulamente prefiro o :checked por não dar merda na sua página, caso a mesma seja single page application... Vejamos a baixo como criar o menu off canvas com CSS REALMENTE: </p>
+Básicamente utilizei as técnicas de <span class="code">:hover</span>, <span class="code">:after</span> e <span class="code">:before</span>, além de usar e abusar do seletor de irmão, o: <span class="code">~</span> (til).</p>
+<p>Voltando para o menu off canvas, o mesmo efeito podemos obter usando a técnica de :checked ou :target, eu particulamente prefiro o :checked por não dar merda na sua página, caso a mesma seja single page application... Vejamos abaixo como criar o menu off canvas com CSS REALMENTE: </p>
 <p><b>Estrutura HTML: </b></p>
 <pre><code class="lang-markup">
     &lt;input type="checkbox" id="menu" hidden&gt;
@@ -351,13 +351,13 @@ Básicamente ultilizei as técnicas de <span class="code">:hover</span>, <span c
         &lt;/label&gt;
 
         &lt;h1&gt;Olá mundo, eu sou um dev "Show Man"&lt;/h1&gt;
-        &lt;p&gt;Abra o menu à cima e veja como podemos criar um menu off canvas usando apenas CSS3&lt;/p&gt;
+        &lt;p&gt;Abra o menu acima e veja como podemos criar um menu off canvas usando apenas CSS3&lt;/p&gt;
 
         &lt;footer&gt;Developer by &lt;a href="http://clovisdasilvaneto.github.io"&gt;Clóvis Neto&lt;/a&gt; &lt;/footer&gt;
     &lt;/section&gt;
 </code></pre>
 
-<p>Usamos o checkbox para podermos obter a ação de clique do usuario, afim de pegar o canvas e mover no eixo X...</p>
+<p>Usamos o checkbox para podermos obter a ação de clique do usuário, afim de pegar o canvas e mover no eixo X...</p>
 <div class="note">Incluí também a fonte &#39;Raleway&#39; do Google Fonts e a Font Awesome para dar um toque mais bonito ao nosso exemplo... <em>Note que um pouco de acessibilidade não faz mal a ninguém...</em></div>
 
 <p><b>Logo aplicando o CSS abaixo:</b></p>
@@ -489,7 +489,7 @@ Básicamente ultilizei as técnicas de <span class="code">:hover</span>, <span c
         transform: translateX(300px);
     }
 </code></pre><p></pre></code></p>
-<p>Teriamos o resultado abaixo, vale apena observar a técnica da pseudo classe <span class="code">:checked</span> que é oque nos faz definir o estado do nosso canvas.</p>
+<p>Teriamos o resultado abaixo, vale à pena observar a técnica da pseudo classe <span class="code">:checked</span> que é o que nos faz definir o estado do nosso canvas.</p>
 <p><p data-height="468" data-theme-id="0" data-slug-hash="zrMOKZ" data-default-tab="result" data-user="clovisneto" class='codepen'>See the Pen <a href='http://codepen.io/clovisneto/pen/zrMOKZ/'>Beautiful Off Canvas Menu</a> by clovis neto (<a href='http://codepen.io/clovisneto'>@clovisneto</a>) on <a href='http://codepen.io'>CodePen</a>.</p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
