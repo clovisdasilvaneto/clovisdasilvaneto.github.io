@@ -1,0 +1,520 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>
+  		
+  			Pare de usar javascript para tudo
+  	</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	
+  	<link rel="publisher" href="https://plus.google.com/u/0/107923948578708069647/posts"/>
+  	<meta property="og:locale" content="pt_BR" />
+  	<meta property="og:type" content="My blog and projects" />
+  	<meta property="og:title" content=" Pare de usar javascript para tudo" />
+  	<meta property="og:description" content="Ontem estava navegando por alguns blogs e pude notar o quanto os dev&#x27;s recorrem ao uso de javascript para tudo, até para criar simples animações cujo o resultado poderia ser obtido com CSS." />
+  	<meta property="og:site_name" content="Clóvis Neto" />
+  	<meta property="og:image" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg" />
+  	<meta property="og:image:type" content="image/png">
+  	<meta name="twitter:card" content="summary_large_image"/>
+  	<meta name="twitter:title" content=" Pare de usar javascript para tudo"/>
+  	<meta name="twitter:site" content="@Clovissneto"/>
+  	<meta name="twitter:domain" content="Clóvis Neto"/>
+  	<meta name="twitter:image:src" content="http://clovisdasilvaneto.github.io/img/clovis-neto.jpg"/>
+  	<meta name="description" content="Ontem estava navegando por alguns blogs e pude notar o quanto os dev&#x27;s recorrem ao uso de javascript para tudo, até para criar simples animações cujo o resultado poderia ser obtido com CSS.">
+  	<meta name="keywords" content="css,javascript">
+  
+  	<link href="/css/prism.css" rel="stylesheet" />
+  	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,300' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="/css/github-repository.css">
+  	<link rel="stylesheet" href="/css/main.css">
+  
+  	<script>
+  	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  	  ga('create', 'UA-59584480-1', 'auto');
+  	  ga('send', 'pageview');
+  
+  	</script>
+  </head>
+  <body>
+  	<!-- <p>
+  		  posts: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+  				  projects: [object Object]
+  				  talks: [object Object],[object Object],[object Object],[object Object],[object Object]
+  				  collections: [object Object]
+  				  title: Pare de usar javascript para tudo
+  				  title_page: Pare de usar javascript para tudo
+  				  template: post.hbt
+  				  date: Mon Feb 08 2016 21:00:00 GMT-0300 (BRT)
+  				  description: Ontem estava navegando por alguns blogs e pude notar o quanto os dev&#x27;s recorrem ao uso de javascript para tudo, até para criar simples animações cujo o resultado poderia ser obtido com CSS.
+  				  author: Clóvis Neto.
+  				  tags: css,javascript
+  				  contents: &lt;p&gt;Javascript sem dúvida é uma linguagem fantâstica e isto já foi mais que provado, mas será que realmente precisamos recorrer ao seu uso sempre? Quando estava navegando em alguns post, pude notar o quanto os desenvolvedores estão cada dia mais dependentes do javascript... E PORQUE NÃO DAMOS UMA CHANCE PARA O CSS TAMBÉM?!&lt;/p&gt;
+  &lt;p&gt;Dentre os posts que &lt;strike&gt;fiquei muito puto&lt;/strike&gt; me chamaram atenção, foi um em que o autor ensinava criar um menu off canvas com css3 mas que no final ele recorria a JS...&lt;/p&gt;
+  &lt;center&gt;
+      &lt;img src=&quot;https://eidler.files.wordpress.com/2009/12/putz.jpg&quot; alt=&quot;PUTZ&quot;&gt;
+      &lt;p class=&quot;legend&quot;&gt;Putz!&lt;/p&gt;
+  &lt;/center&gt;
+  
+  &lt;p&gt;Uma das coisas que me deixa mais entristecido na comunidade front end é como escanteamos o nosso bom CSS e esquecemos que sem ele, as páginas de hoje não teriam vida, estariamos sempre com layouts engessados e etc...&lt;/p&gt;
+  &lt;h2 id=&quot;que-tal-um-pouquinho-mais-de-css-&quot;&gt;Que tal um pouquinho mais de CSS?&lt;/h2&gt;
+  &lt;p&gt;Um dos exemplos que postei alguns dias atrás no meu facebook e nas comunidades foi o &lt;a href=&quot;http://clovisdasilvaneto.github.io/CsSocker&quot; target=&quot;_bank&quot;&gt;CsSocker&lt;/a&gt;, um joguinho que desenvolvi usando apenas CSS3, sem imagens e javascript. Apesar de ser um jogo demonstrativo com apenas 2 estágios, um menu inicial, tela de instruções e gameover, pode-se notar claramente o números de exemplos fantâsticos que podemos obter com CSS3, basta apenas usar sua imaginação...&lt;/p&gt;
+  &lt;p&gt;Voltando para casos reais, desenvolvi outro exemplo para mostrar que não precisamos usar JS para tudo. Imagine a seguinte situação:&lt;/p&gt;
+  &lt;ul&gt;
+  &lt;li&gt;Seu chefe estava navegando em um site de músicas e ao passar o mouse sobre um item do menu ele teve a incrível surpresa: O fundo do item ativo se deslocou até o item em que o ponteiro do seu mouse estava por cima... Logo o seu chefe pediu para você aplicar este mesmo estilo no site do cliente mais importante da empresa...&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;Com esta situação nos deparamos com 3 perfis de desenvolvedores:&lt;/p&gt;
+  &lt;ul&gt;
+  &lt;li&gt;&lt;b&gt;O amador&lt;/b&gt; - Vai logo procurar um plugin jQuery pra chegar ao resultado final.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;O famozo &amp;quot;faz na mão&amp;quot;&lt;/b&gt; - Ele sabe que este efeito é simples e não precisa de nenhum plugin, nem mesmo de jQuery... Faz com javascript puro.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;O &amp;#39;Show Man&amp;#39;&lt;/b&gt; - Você! O &lt;strike&gt;dev muito foda, que sempre está na ativa lendo meu blog,&lt;/strike&gt; dev &amp;quot;fock-you&amp;quot; que acabou notando que não é preciso usar essa dinámica toda para poder obter o resultado final, ousou-se desafiar e fazer com CSS.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;O menu citado à cima pode ser obtido no exemplo que desenvolvi em meu codepen abaixo&lt;/p&gt;
+  &lt;center&gt;
+      &lt;p data-height=&quot;268&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;zrmgmr&quot; data-default-tab=&quot;result&quot; data-user=&quot;clovisneto&quot; class=&#x27;codepen&#x27;&gt;See the Pen &lt;a href=&#x27;http://codepen.io/clovisneto/pen/zrmgmr/&#x27;&gt;Pure CSS menu-follow&lt;/a&gt; by clovis neto (&lt;a href=&#x27;http://codepen.io/clovisneto&#x27;&gt;@clovisneto&lt;/a&gt;) on &lt;a href=&#x27;http://codepen.io&#x27;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+      &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+  &lt;/center&gt;
+  
+  &lt;p&gt;Não irei explicar detalhadamente para não desfocarmos o assunto do post, mas note que todas animações no exemplo citado foram feitas com css.
+  Básicamente ultilizei as técnicas de &lt;span class=&quot;code&quot;&gt;:hover&lt;/span&gt;, &lt;span class=&quot;code&quot;&gt;:after&lt;/span&gt; e &lt;span class=&quot;code&quot;&gt;:before&lt;/span&gt;, além de usar e abusar do seletor de irmão, o: &lt;span class=&quot;code&quot;&gt;~&lt;/span&gt; (til).&lt;/p&gt;
+  &lt;p&gt;Voltando para o menu off canvas, o mesmo efeito podemos obter usando a técnica de :checked ou :target, eu particulamente prefiro o :checked por não dar merda na sua página, caso a mesma seja single page application... Vejamos a baixo como criar o menu off canvas com CSS REALMENTE: &lt;/p&gt;
+  &lt;p&gt;&lt;b&gt;Estrutura HTML: &lt;/b&gt;&lt;/p&gt;
+  &lt;pre&gt;&lt;code class=&quot;lang-markup&quot;&gt;
+      &amp;lt;input type=&quot;checkbox&quot; id=&quot;menu&quot; hidden&amp;gt;
+      &amp;lt;section class=&quot;canvas&quot;&amp;gt;
+          &amp;lt;nav class=&quot;menu&quot; role=&quot;navigation&quot;&amp;gt;
+              &amp;lt;label for=&quot;menu&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-close&quot;&amp;gt;&amp;lt;/i&amp;gt;&amp;lt;/label&amp;gt;
+              &amp;lt;ul&amp;gt;
+                  &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-home&quot;&amp;gt;&amp;lt;/i&amp;gt; Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                  &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-users&quot;&amp;gt;&amp;lt;/i&amp;gt; Users&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                  &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;&amp;lt;i class=&quot;fa fa-cog&quot;&amp;gt;&amp;lt;/i&amp;gt; Configurations&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+              &amp;lt;/ul&amp;gt;
+          &amp;lt;/nav&amp;gt;
+  
+          &amp;lt;label class=&quot;menu-icon&quot; for=&quot;menu&quot; role=&quot;menuitem&quot;&amp;gt;
+              &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;
+          &amp;lt;/label&amp;gt;
+  
+          &amp;lt;h1&amp;gt;Olá mundo, eu sou um dev &quot;Show Man&quot;&amp;lt;/h1&amp;gt;
+          &amp;lt;p&amp;gt;Abra o menu à cima e veja como podemos criar um menu off canvas usando apenas CSS3&amp;lt;/p&amp;gt;
+  
+          &amp;lt;footer&amp;gt;Developer by &amp;lt;a href=&quot;http://clovisdasilvaneto.github.io&quot;&amp;gt;Clóvis Neto&amp;lt;/a&amp;gt; &amp;lt;/footer&amp;gt;
+      &amp;lt;/section&amp;gt;
+  &lt;/code&gt;&lt;/pre&gt;
+  
+  &lt;p&gt;Usamos o checkbox para podermos obter a ação de clique do usuario, afim de pegar o canvas e mover no eixo X...&lt;/p&gt;
+  &lt;div class=&quot;note&quot;&gt;Incluí também a fonte &amp;#39;Raleway&amp;#39; do Google Fonts e a Font Awesome para dar um toque mais bonito ao nosso exemplo... &lt;em&gt;Note que um pouco de acessibilidade não faz mal a ninguém...&lt;/em&gt;&lt;/div&gt;
+  
+  &lt;p&gt;&lt;b&gt;Logo aplicando o CSS abaixo:&lt;/b&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;pre&gt;&lt;code class=&quot;lang-css&quot;&gt;&lt;/p&gt;
+  &lt;pre&gt;&lt;code&gt;    * {
+          margin: 0;
+          padding: 0;
+          color:#FFF1F1;
+          font-family: &amp;#39;Raleway&amp;#39;;
+      }
+  
+      body {
+          background: #B486CC;
+          font-size: 2em;
+      }
+  
+      h1 {
+          font-size: 2.4em;
+          margin: 2rem 0 0.5em;
+          text-shadow:1px 1px 0 #3A3A3A;
+      }
+  
+      p {
+          font-size: 0.6em;
+      }
+  
+      h1, p {
+          padding: 0 10%;
+          text-align: center;
+      }
+  
+      p, a {
+          font-weight: 300;
+      }
+  
+      a {
+          text-decoration: none;
+      }
+  
+      label {
+          cursor: pointer;
+      }
+  
+      footer {
+    padding: 0.5em 0;
+    font-size: 0.5em;
+    text-align: center;
+    margin-top: 1.5em;
+      }
+  
+      footer a{
+          color: #B2FF06;
+      }
+  
+      .canvas {
+          padding-top: 1px;
+  
+          -webkit-transition: ease 0.5s all;
+          -moz-transition: ease 0.5s all;
+          -ms-transition: ease 0.5s all;
+          -o-transition: ease 0.5s all;
+          transition: ease 0.5s all;
+      }
+  
+      .menu-icon {
+          display: block;
+          cursor: pointer;
+          width: 38px;
+          margin: 0.51em;
+      }
+  
+      .menu-icon span, .menu-icon:after, .menu-icon:before {
+          content:&amp;quot;&amp;quot;;
+          display: block;
+          margin-top: 0.3rem;
+          border: solid 3px #fff;
+          width: 100%;
+      }
+  
+      .menu-icon:hover span, .menu-icon:hover:before, 
+      .menu-icon:hover:after {
+          border-color:rgba(255, 255, 255, 0.75);
+      }
+  
+      .menu {
+          height: 100vh;
+          background: #594165;
+          font-size: 1.3rem;
+          width: 300px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          -webkit-transform: translate3d(-100%,0,0);
+          -moz-transform: translate3d(-100%,0,0);
+          -ms-transform: translate3d(-100%,0,0);
+          -o-transform: translate3d(-100%,0,0);
+          transform: translate3d(-100%,0,0);
+      }
+  
+      .menu ul {
+          padding-top: 3.3em;
+          margin: 0 2em;    
+          list-style: none;
+      }
+  
+      .menu a {
+          font-weight: 400;
+          padding: 0.5rem 1rem;
+          display: block;
+      }
+  
+      .menu i {
+          display: inline-block;
+          margin-right: 0.5em;
+      }
+  
+      .fa-close {
+          font-weight: 100;
+          position: absolute;
+          top:10px;
+          right: 4px;
+      }
+  
+      #menu:checked ~ .canvas {
+          -webkit-transform: translateX(300px);
+          -moz-transform: translateX(300px);
+          -ms-transform: translateX(300px);
+          -o-transform: translateX(300px);
+          transform: translateX(300px);
+      }
+  &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;/pre&gt;&lt;/code&gt;&lt;/p&gt;
+  &lt;p&gt;Teriamos o resultado abaixo, vale apena observar a técnica da pseudo classe &lt;span class=&quot;code&quot;&gt;:checked&lt;/span&gt; que é oque nos faz definir o estado do nosso canvas.&lt;/p&gt;
+  &lt;p&gt;&lt;p data-height=&quot;468&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;zrMOKZ&quot; data-default-tab=&quot;result&quot; data-user=&quot;clovisneto&quot; class=&#x27;codepen&#x27;&gt;See the Pen &lt;a href=&#x27;http://codepen.io/clovisneto/pen/zrMOKZ/&#x27;&gt;Beautiful Off Canvas Menu&lt;/a&gt; by clovis neto (&lt;a href=&#x27;http://codepen.io/clovisneto&#x27;&gt;@clovisneto&lt;/a&gt;) on &lt;a href=&#x27;http://codepen.io&#x27;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
+  &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+  
+  &lt;h2 id=&quot;conclus-o&quot;&gt;Conclusão&lt;/h2&gt;
+  &lt;p&gt;Vamos parar um pouco de usar exageradamente a nossa querida linguagem javascript :D e começamos a olhar mais diferente para o nosso amigo CSS, você pode ficar surpreso com as mágicas fantâsticas que esta incrível linguagem pode nos oferecer.&lt;/p&gt;
+  
+  				  mode: 0644
+  				  stats: [object Object]
+  				  collection: posts
+  				  next: [object Object]
+  				  path: pare-de-usar-javascript-para-tudo
+  				  filename: /Applications/XAMPP/xamppfiles/htdocs/meu-blog/templates/post.hbt
+  				  data: true
+  				  knownHelpers: [object Object]
+  		</p> -->
+  	<nav id="menubar" class="flip-top">
+  		<ul class="container">
+  			<li><a href="/index.html">Home</a></li>
+  			<li><a href="/about">About</a></li>
+  			<li><a href="/my-blog">Blog</a></li>
+  			<li><a href="/projects">Projects</a></li>
+  			<li><a href="/talk-and-cases">Talk and Cases</a></li>
+  			<li class="socials"><a target="_blank" href="https://codepen.io/clovisneto/"><i class="fa fa-codepen"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://github.com/clovisdasilvaneto"><i class="fa fa-github"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://twitter.com/Clovissneto"><i class="fa fa-twitter"></i></a></li>
+  			<li class="socials"><a target="_blank" href="https://www.facebook.com/ClovisDaSilvaNeto"><i class="fa fa-facebook"></i></a></li>
+  		</ul>
+  
+  
+  		<label for="menu-mobile" class="mobile">
+  			<span></span>
+  			<span></span>
+  			<span></span>
+  
+  			<select id="menu-mobile">
+  				<option value="/index.html">Home</option>
+  				<option value="/about">About</option>
+  				<option value="/my-blog">Blog</option>
+  				<option value="/projects">Projects</option>
+  				<option value="/talk-and-cases">Talk and Cases</option>
+  				<option value="#" selected>Voltar</option>
+  			</select>
+  		</label>
+  	</nav>
+
+<header class="wrapper">
+	<div class="container">
+		<time datetime="February 8, 2016">February 8, 2016</time>
+		<h1>Pare de usar javascript para tudo</h1>
+		<h2>Ontem estava navegando por alguns blogs e pude notar o quanto os dev&#x27;s recorrem ao uso de javascript para tudo, até para criar simples animações cujo o resultado poderia ser obtido com CSS.</h2>
+	</div>
+</header>
+
+<section class="container">
+	<article>
+	    <b>Tags:</b>
+	           <a href="/tags/css.html" class="code" title="Posts sobre css">css</a>
+
+	           <a href="/tags/javascript.html" class="code" title="Posts sobre javascript">javascript</a>
+		
+		<br>
+		<br>
+
+	    <p>Javascript sem dúvida é uma linguagem fantâstica e isto já foi mais que provado, mas será que realmente precisamos recorrer ao seu uso sempre? Quando estava navegando em alguns post, pude notar o quanto os desenvolvedores estão cada dia mais dependentes do javascript... E PORQUE NÃO DAMOS UMA CHANCE PARA O CSS TAMBÉM?!</p>
+<p>Dentre os posts que <strike>fiquei muito puto</strike> me chamaram atenção, foi um em que o autor ensinava criar um menu off canvas com css3 mas que no final ele recorria a JS...</p>
+<center>
+    <img src="https://eidler.files.wordpress.com/2009/12/putz.jpg" alt="PUTZ">
+    <p class="legend">Putz!</p>
+</center>
+
+<p>Uma das coisas que me deixa mais entristecido na comunidade front end é como escanteamos o nosso bom CSS e esquecemos que sem ele, as páginas de hoje não teriam vida, estariamos sempre com layouts engessados e etc...</p>
+<h2 id="que-tal-um-pouquinho-mais-de-css-">Que tal um pouquinho mais de CSS?</h2>
+<p>Um dos exemplos que postei alguns dias atrás no meu facebook e nas comunidades foi o <a href="http://clovisdasilvaneto.github.io/CsSocker" target="_bank">CsSocker</a>, um joguinho que desenvolvi usando apenas CSS3, sem imagens e javascript. Apesar de ser um jogo demonstrativo com apenas 2 estágios, um menu inicial, tela de instruções e gameover, pode-se notar claramente o números de exemplos fantâsticos que podemos obter com CSS3, basta apenas usar sua imaginação...</p>
+<p>Voltando para casos reais, desenvolvi outro exemplo para mostrar que não precisamos usar JS para tudo. Imagine a seguinte situação:</p>
+<ul>
+<li>Seu chefe estava navegando em um site de músicas e ao passar o mouse sobre um item do menu ele teve a incrível surpresa: O fundo do item ativo se deslocou até o item em que o ponteiro do seu mouse estava por cima... Logo o seu chefe pediu para você aplicar este mesmo estilo no site do cliente mais importante da empresa...</li>
+</ul>
+<p>Com esta situação nos deparamos com 3 perfis de desenvolvedores:</p>
+<ul>
+<li><b>O amador</b> - Vai logo procurar um plugin jQuery pra chegar ao resultado final.</li>
+<li><b>O famozo &quot;faz na mão&quot;</b> - Ele sabe que este efeito é simples e não precisa de nenhum plugin, nem mesmo de jQuery... Faz com javascript puro.</li>
+<li><b>O &#39;Show Man&#39;</b> - Você! O <strike>dev muito foda, que sempre está na ativa lendo meu blog,</strike> dev &quot;fock-you&quot; que acabou notando que não é preciso usar essa dinámica toda para poder obter o resultado final, ousou-se desafiar e fazer com CSS.</li>
+</ul>
+<p>O menu citado à cima pode ser obtido no exemplo que desenvolvi em meu codepen abaixo</p>
+<center>
+    <p data-height="268" data-theme-id="0" data-slug-hash="zrmgmr" data-default-tab="result" data-user="clovisneto" class='codepen'>See the Pen <a href='http://codepen.io/clovisneto/pen/zrmgmr/'>Pure CSS menu-follow</a> by clovis neto (<a href='http://codepen.io/clovisneto'>@clovisneto</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+    <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+</center>
+
+<p>Não irei explicar detalhadamente para não desfocarmos o assunto do post, mas note que todas animações no exemplo citado foram feitas com css.
+Básicamente ultilizei as técnicas de <span class="code">:hover</span>, <span class="code">:after</span> e <span class="code">:before</span>, além de usar e abusar do seletor de irmão, o: <span class="code">~</span> (til).</p>
+<p>Voltando para o menu off canvas, o mesmo efeito podemos obter usando a técnica de :checked ou :target, eu particulamente prefiro o :checked por não dar merda na sua página, caso a mesma seja single page application... Vejamos a baixo como criar o menu off canvas com CSS REALMENTE: </p>
+<p><b>Estrutura HTML: </b></p>
+<pre><code class="lang-markup">
+    &lt;input type="checkbox" id="menu" hidden&gt;
+    &lt;section class="canvas"&gt;
+        &lt;nav class="menu" role="navigation"&gt;
+            &lt;label for="menu"&gt;&lt;i class="fa fa-close"&gt;&lt;/i&gt;&lt;/label&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-home"&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-users"&gt;&lt;/i&gt; Users&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-cog"&gt;&lt;/i&gt; Configurations&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+
+        &lt;label class="menu-icon" for="menu" role="menuitem"&gt;
+            &lt;span&gt;&lt;/span&gt;
+        &lt;/label&gt;
+
+        &lt;h1&gt;Olá mundo, eu sou um dev "Show Man"&lt;/h1&gt;
+        &lt;p&gt;Abra o menu à cima e veja como podemos criar um menu off canvas usando apenas CSS3&lt;/p&gt;
+
+        &lt;footer&gt;Developer by &lt;a href="http://clovisdasilvaneto.github.io"&gt;Clóvis Neto&lt;/a&gt; &lt;/footer&gt;
+    &lt;/section&gt;
+</code></pre>
+
+<p>Usamos o checkbox para podermos obter a ação de clique do usuario, afim de pegar o canvas e mover no eixo X...</p>
+<div class="note">Incluí também a fonte &#39;Raleway&#39; do Google Fonts e a Font Awesome para dar um toque mais bonito ao nosso exemplo... <em>Note que um pouco de acessibilidade não faz mal a ninguém...</em></div>
+
+<p><b>Logo aplicando o CSS abaixo:</b></p>
+<p><pre><code class="lang-css"></p>
+<pre><code>    * {
+        margin: 0;
+        padding: 0;
+        color:#FFF1F1;
+        font-family: &#39;Raleway&#39;;
+    }
+
+    body {
+        background: #B486CC;
+        font-size: 2em;
+    }
+
+    h1 {
+        font-size: 2.4em;
+        margin: 2rem 0 0.5em;
+        text-shadow:1px 1px 0 #3A3A3A;
+    }
+
+    p {
+        font-size: 0.6em;
+    }
+
+    h1, p {
+        padding: 0 10%;
+        text-align: center;
+    }
+
+    p, a {
+        font-weight: 300;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    footer {
+  padding: 0.5em 0;
+  font-size: 0.5em;
+  text-align: center;
+  margin-top: 1.5em;
+    }
+
+    footer a{
+        color: #B2FF06;
+    }
+
+    .canvas {
+        padding-top: 1px;
+
+        -webkit-transition: ease 0.5s all;
+        -moz-transition: ease 0.5s all;
+        -ms-transition: ease 0.5s all;
+        -o-transition: ease 0.5s all;
+        transition: ease 0.5s all;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        width: 38px;
+        margin: 0.51em;
+    }
+
+    .menu-icon span, .menu-icon:after, .menu-icon:before {
+        content:&quot;&quot;;
+        display: block;
+        margin-top: 0.3rem;
+        border: solid 3px #fff;
+        width: 100%;
+    }
+
+    .menu-icon:hover span, .menu-icon:hover:before, 
+    .menu-icon:hover:after {
+        border-color:rgba(255, 255, 255, 0.75);
+    }
+
+    .menu {
+        height: 100vh;
+        background: #594165;
+        font-size: 1.3rem;
+        width: 300px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        -webkit-transform: translate3d(-100%,0,0);
+        -moz-transform: translate3d(-100%,0,0);
+        -ms-transform: translate3d(-100%,0,0);
+        -o-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
+    }
+
+    .menu ul {
+        padding-top: 3.3em;
+        margin: 0 2em;    
+        list-style: none;
+    }
+
+    .menu a {
+        font-weight: 400;
+        padding: 0.5rem 1rem;
+        display: block;
+    }
+
+    .menu i {
+        display: inline-block;
+        margin-right: 0.5em;
+    }
+
+    .fa-close {
+        font-weight: 100;
+        position: absolute;
+        top:10px;
+        right: 4px;
+    }
+
+    #menu:checked ~ .canvas {
+        -webkit-transform: translateX(300px);
+        -moz-transform: translateX(300px);
+        -ms-transform: translateX(300px);
+        -o-transform: translateX(300px);
+        transform: translateX(300px);
+    }
+</code></pre><p></pre></code></p>
+<p>Teriamos o resultado abaixo, vale apena observar a técnica da pseudo classe <span class="code">:checked</span> que é oque nos faz definir o estado do nosso canvas.</p>
+<p><p data-height="468" data-theme-id="0" data-slug-hash="zrMOKZ" data-default-tab="result" data-user="clovisneto" class='codepen'>See the Pen <a href='http://codepen.io/clovisneto/pen/zrMOKZ/'>Beautiful Off Canvas Menu</a> by clovis neto (<a href='http://codepen.io/clovisneto'>@clovisneto</a>) on <a href='http://codepen.io'>CodePen</a>.</p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="conclus-o">Conclusão</h2>
+<p>Vamos parar um pouco de usar exageradamente a nossa querida linguagem javascript :D e começamos a olhar mais diferente para o nosso amigo CSS, você pode ficar surpreso com as mágicas fantâsticas que esta incrível linguagem pode nos oferecer.</p>
+
+	</article>
+	  <footer>
+	    <div id="disqus_thread"></div>
+	    <script type="text/javascript">
+	        /* * * CONFIGURATION VARIABLES * * */
+	        var disqus_shortname = 'clovisnetoblog';
+	        
+	        /* * * DON'T EDIT BELOW THIS LINE * * */
+	        (function() {
+	            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	        })();
+	    </script>
+	    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	    </footer>
+</section>
+
+	<script src="/js/prism.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>
