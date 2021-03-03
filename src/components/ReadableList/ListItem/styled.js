@@ -5,6 +5,11 @@ export const ItemTitle = styled.h2`
   font-size: 1.5rem;
   margin: 0;
 `
+export const ItemDate = styled.p`
+  font-size: 0.8rem;
+  margin-top: 0;
+  color: ${({ theme }) => theme.colors.stone};
+`
 
 export const ItemDescription = styled.p`
   font-style: italic;

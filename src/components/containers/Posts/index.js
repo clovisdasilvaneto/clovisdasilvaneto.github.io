@@ -7,6 +7,7 @@ const formatPostStructure = post => ({
   title: post?.node?.frontmatter?.title,
   description: post?.node?.frontmatter?.description,
   path: post?.node?.frontmatter?.path,
+  date: post?.node?.frontmatter?.date,
 })
 
 function Posts({ data, title }) {

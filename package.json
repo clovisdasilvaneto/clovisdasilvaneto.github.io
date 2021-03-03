@@ -17,6 +17,7 @@
     "@deckdeckgo/highlight-code": "^2.5.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "date-fns": "^2.18.0",
     "gatsby": "^2.26.1",
     "gatsby-plugin-disqus": "^1.2.2",
     "gatsby-plugin-emotion": "^5.4.0",
