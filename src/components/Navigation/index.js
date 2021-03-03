@@ -9,7 +9,9 @@ function Navigation({ items, straight }) {
         {items.map((item, index) => (
           <NavigationItem key={index} straight={straight}>
             {item.external ? (
-              <a href={item.link}>{item.name || item.icon}</a>
+              <a target="_blank" rel="noreferrer" href={item.link}>
+                {item.name || item.icon}
+              </a>
             ) : (
               <Link to={item.link}>{item.name || item.icon}</Link>
             )}

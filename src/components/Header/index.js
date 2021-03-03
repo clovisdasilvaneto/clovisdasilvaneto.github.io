@@ -13,10 +13,26 @@ const menuItems = [
 ]
 
 const socialItems = [
-  { icon: <FaYoutube />, external: true, link: "http://google.com" },
-  { icon: <FaGithub />, external: true, link: "http://google.com" },
-  { icon: <FaLinkedin />, external: true, link: "http://google.com" },
-  { icon: <FaInstagram />, external: true, link: "http://google.com" },
+  {
+    icon: <FaYoutube />,
+    external: true,
+    link: "https://www.youtube.com/channel/UCQFuIVjxtF7B0P2sPBU7E8A",
+  },
+  {
+    icon: <FaGithub />,
+    external: true,
+    link: "https://github.com/clovisdasilvaneto",
+  },
+  {
+    icon: <FaLinkedin />,
+    external: true,
+    link: "https://www.linkedin.com/in/clovisdasilvaneto",
+  },
+  {
+    icon: <FaInstagram />,
+    external: true,
+    link: "https://twitter.com/clovissneto",
+  },
 ]
 
 function Header({ children, hasPicture }) {
