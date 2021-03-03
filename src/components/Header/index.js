@@ -1,5 +1,11 @@
 import React from "react"
-import { FaLinkedin, FaYoutube, FaGithub, FaInstagram } from "react-icons/fa"
+import {
+  FaLinkedin,
+  FaYoutube,
+  FaGithub,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa"
 import { Link } from "gatsby"
 
 import { HeaderWrapper, HeaderLogo, HeaderContainer } from "./styled"
@@ -30,6 +36,11 @@ const socialItems = [
   },
   {
     icon: <FaInstagram />,
+    external: true,
+    link: "https://www.instagram.com/clovisdasilvaneto",
+  },
+  {
+    icon: <FaTwitter />,
     external: true,
     link: "https://twitter.com/clovissneto",
   },

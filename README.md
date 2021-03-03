@@ -1,8 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
+  [![Website Publish](https://github.com/clovisdasilvaneto/clovisdasilvaneto.github.io/actions/workflows/main.yml/badge.svg)](https://github.com/clovisdasilvaneto/clovisdasilvaneto.github.io/actions/workflows/main.yml)
 </p>
 <h1 align="center">
   Welcome to my blog
@@ -11,15 +9,6 @@
 This is a space where I share my ideas, opnions and projects. Feel free to contribute at any time. Questions and feedbacks are also more than welcome.
 
 ## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
-
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
 
 1.  **Start developing.**
 
