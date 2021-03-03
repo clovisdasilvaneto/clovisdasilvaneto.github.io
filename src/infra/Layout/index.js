@@ -25,6 +25,9 @@ export default function Layout({
         <html lang="pt-br" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:site_name" content="Clóvis Neto's Blog" />
       </Helmet>
 
       <ThemeProvider theme={theme}>
