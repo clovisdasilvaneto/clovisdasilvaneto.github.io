@@ -1,6 +1,6 @@
 ---
 path: "/dominando-o-objeto-date-no-javascript"
-date: "2020-01-01"
+date: "2017-01-01"
 title: "Dominando o objeto date no javascript"
 author: "Clóvis Neto"
 tags: "javascript, date-object"
