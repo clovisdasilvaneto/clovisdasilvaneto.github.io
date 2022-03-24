@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="pt-br"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.26.1"/><title data-react-helmet="true">Box shadow e suas mágicas</title><meta data-react-helmet="true" name="description"/><meta data-react-helmet="true" property="og:title" content="Box shadow e suas mágicas"/><meta data-react-helmet="true" property="og:description"/><meta data-react-helmet="true" property="og:site_name" content="Clóvis Neto&#x27;s Blog"/><link href="https://fonts.googleapis.com/css?family=Inter:+300,400,500,600,700&amp;display=swap" rel="stylesheet"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link as="script" rel="preload" href="/webpack-runtime-936d433109bc997f0cfa.js"/><link as="script" rel="preload" href="/framework-093277442ae50afb9478.js"/><link as="script" rel="preload" href="/app-bdc7531044e81d007e46.js"/><link as="script" rel="preload" href="/1bfc9850-45d2302bc0b697e33557.js"/><link as="script" rel="preload" href="/commons-9adb930b4f4bf386a213.js"/><link as="script" rel="preload" href="/f76269354c86574759d873a956369a62a6c0d497-d701e526deb2716967c8.js"/><link as="script" rel="preload" href="/component---src-templates-blog-template-index-js-f071e0c970ae776bfd57.js"/><link as="fetch" rel="preload" href="/page-data/box-shadow-e-suas-magicas/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 1b63qh1">.css-1b63qh1{padding:2rem;background:linear-gradient(
+        213deg,
+        rgb(94, 49, 220) 0%,
+        rgb(67, 53, 223) 100%
+      ) right center/contain no-repeat,linear-gradient(
+        32deg,
+        rgba(255, 255, 255, 0.25) 33%,
+        rgba(153, 153, 153, 0.25) 100%
+      ) left center rgb(49, 85, 220);-webkit-background-position:right center,left center;background-position:right center,left center;background-repeat:no-repeat;}</style><div class="css-1b63qh1 etjd89z2"><style data-emotion="css 1pcclbr">.css-1pcclbr{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;}@media (min-width: 1025px){.css-1pcclbr{max-width:960px;width:100%;margin-left:auto;margin-right:auto;}}</style><header class="css-1pcclbr etjd89z0"><style data-emotion="css 1rs72c6">.css-1rs72c6{margin:0;font-size:1.3rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.css-1rs72c6 a{font-size:1.3rem;-webkit-text-decoration:none;text-decoration:none;color:#fff;font-weight:400;}.css-1rs72c6 img{width:50px;border-radius:100%;margin-right:1rem;}</style><h1 class="css-1rs72c6 etjd89z1"><img src="/images/clovis-neto.jpg" alt="Clóvis Neto"/><a href="/">Clóvis Neto</a></h1><nav><style data-emotion="css 1bm2wc7">.css-1bm2wc7{padding:0;list-style:none;margin:0;display:none;}@media (min-width: 1025px){.css-1bm2wc7{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}}</style><ul class="css-1bm2wc7 e1wcrvm21"><style data-emotion="css gmvnif">.css-gmvnif{list-style:none;margin:0 0.4rem;}.css-gmvnif:first-of-type{margin-left:0;}.css-gmvnif:last-of-type{margin-right:0;}.css-gmvnif a{margin:0;color:#fff;-webkit-text-decoration:none;text-decoration:none;font-weight:400;}</style><li class="css-gmvnif e1wcrvm20"><a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCQFuIVjxtF7B0P2sPBU7E8A"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></li><li class="css-gmvnif e1wcrvm20"><a target="_blank" rel="noreferrer" href="https://github.com/clovisdasilvaneto"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li><li class="css-gmvnif e1wcrvm20"><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/clovisdasilvaneto"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li><li class="css-gmvnif e1wcrvm20"><a target="_blank" rel="noreferrer" href="https://www.instagram.com/clovisdasilvaneto"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a></li><li class="css-gmvnif e1wcrvm20"><a target="_blank" rel="noreferrer" href="https://twitter.com/clovissneto"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a></li></ul></nav><nav><ul class="css-1bm2wc7 e1wcrvm21"><style data-emotion="css 1os5j7u">.css-1os5j7u{list-style:none;margin:0 1rem;}.css-1os5j7u:first-of-type{margin-left:0;}.css-1os5j7u:last-of-type{margin-right:0;}.css-1os5j7u a{margin:0;color:#fff;-webkit-text-decoration:none;text-decoration:none;font-weight:400;}</style><li class="css-1os5j7u e1wcrvm20"><a href="/blog">Blog</a></li><li class="css-1os5j7u e1wcrvm20"><a href="/projects">Projects</a></li><li class="css-1os5j7u e1wcrvm20"><a href="/talks-and-cases">Talks and Cases</a></li></ul></nav></header></div><style data-emotion="css-global 1thy0vt">*{box-sizing:border-box;font-family:Inter;}body,html{margin:0;padding:0;}p,a,legend,span,label,section,div,header,article,figcaption,ul,li{font-size:1.2rem;}</style><style data-emotion="css sau222">.css-sau222{padding:3rem;}@media (min-width: 1025px){.css-sau222{max-width:960px;width:100%;margin-left:auto;margin-right:auto;}}</style><div class="css-sau222 ez9li7z0"><section><header><style data-emotion="css fvzs2i">.css-fvzs2i{text-align:left;color:#000;margin:0;font-weight:700;font-size:3rem;}</style><p color="dark" class="css-fvzs2i e18a5zcj0">Box shadow e suas mágicas</p></header><style data-emotion="css 1ckqmj">.css-1ckqmj{margin-top:4rem;}.css-1ckqmj span,.css-1ckqmj a{color:#4b35dd;}.css-1ckqmj img{width:100%;}.css-1ckqmj p,.css-1ckqmj a,.css-1ckqmj span,.css-1ckqmj ul,.css-1ckqmj li{font-size:1.6rem;line-height:2.4rem;}.css-1ckqmj blockquote{border-left:solid 4px #4b35dd;margin:2rem 0;padding-left:3rem;}.css-1ckqmj blockquote p{font-size:1.4rem;line-height:2rem;}.css-1ckqmj h2,.css-1ckqmj h2 span{font-size:2.4rem;margin-top:5rem;}.css-1ckqmj h3,.css-1ckqmj h2 span{font-size:2rem;margin-top:3rem;}.css-1ckqmj span.error{color:red;}.css-1ckqmj center{font-size:0.8rem;color:#969696;font-weight:500;}</style><article class="css-1ckqmj e1brs3390"><center><img src="/images/cssocker.jpg" alt="CsSocker" /></center>
+<p>Se você acompanha minhas postagens no twitter ou facebook, com certeza já ouviu falar de um joguinho que estou desenvolvendo apenas com css, onde nenhuma imagem será utilizada e nenhuma linha de javascript no código fonte será encontrada (apenas o do Google Analytics, claro :p).</p>
+<h2>A propriedade box-shadow</h2>
+<p>Uma das "pseudo class" css que mais gosto e uso muito é a do estado de <span>:hover</span> e quando comecei a estudar a fundo a propriedade <span>box-shadow</span>, esses dois se incaixaram perfeitamente.</p>
+<p>Abaixo temos um exemplo bastante simples de como usar essas duas obras de artes:</p>
+<style>
+    .btn-simple {
+        width: 100px;
+        height: 100px;
+        margin: 30px auto;
+        text-align: center;
+        background: #2e9fff;
+        border-radius: 4px;
+        line-height: 100px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .trs-5 {
+        -webkit-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+        -moz-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+        -ms-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+        -o-transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+        transition:all cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s, box-shadow cubic-bezier(0.25, 0.1, 0.23, 0.79) 0.5s;
+    }
+
+    #on-side {
+        box-shadow:inset 0 0 0 #00DFFF;
+    }
+
+    #on-side:hover {
+        -webkit-transform:scale(1.2);
+        -ms-transform:scale(1.2);
+        -o-transform:scale(1.2);
+        -moz-transform:scale(1.2);
+        transform:scale(1.2);
+        box-shadow:inset 0 -100px 0 0 #00DFFF, 0 8px 6px -6px #000;
+    }
+</style>
+<div class="btn-simple trs-5" id="on-side">Hover-me</div>
+<h2>O Problema</h2>
+<p>Após descobrir que para chegar ao resultado como o botão à cima, vários dev's param e partem para aprender outras propriedades css, não se aprofundam em cada propriedade especifica, seu conhecimento sempre é superficial, por isso geralmente costumo dizer que ninguém sabe css, pois é fácil de mais.</p>
+<p>Para perceber algumas mágicas do box-shadow, vamos voltar um pouco no tempo...</p>
+<h2>O tempo de agência</h2>
+<p>Lembra daquele tempo que você recebia os layouts malucos que o design fazia no photoshop em que o conteudo sempre iria ter dois bg's que nunca se alinhavam em grid nenhum? Se não entendeu, veja a figura abaixo</p>
+<center><img src="/images/layout-maluco.jpg" alt="Layout Maluco" /><br>**Figura 1:** Layout maluco</center>
+<p>Agora lhe pergunto oque você fária para chegar a este resultado? Adicionaria uma div com <span>position: absolute</span>, né espertinho? Podemos chegar ao mesmo resultado com um html e css bem mais enxuto adicionando apenas um box-shadow e aumentando o padding do elemento:</p>
+<center><img src="/images/layout-maluco2.jpg" alt="Layout Maluco" /><br>**Figura 2:** Layout maluco um pouco mais elegante</center>
+<deckgo-highlight-code html   highlight-lines="">
+          <code slot="code">&lt;h1 class=&quot;banner&quot;&gt;Meu layout maluco&lt;/h1&gt;
+&lt;div class=&quot;content-crazy&quot;&gt;
+  &lt;h2&gt;Layout Maluco&lt;/h2&gt;
+  &lt;br /&gt;
+  &lt;p&gt;
+    It is a long established fact that a reader will be distracted by the
+    readable content of a page when looking at its layout. The point of using
+    Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+    opposed to using &#39;Content here, content here&#39;, making it look like readable
+    English. Many desktop publis
+  &lt;/p&gt;
+&lt;/div&gt;</code>
+        </deckgo-highlight-code>
+<deckgo-highlight-code css   highlight-lines="">
+          <code slot="code">.content-crazy {
+  (...)padding: 2em 20em 4em 32em;
+  box-shadow: inset 470px 0 #2eb983;
+}</code>
+        </deckgo-highlight-code>
+<blockquote>
+<p>Perceba que acrescentamos apenas duas linhas no css.</p>
+</blockquote>
+<h2>Dúplicar formas</h2>
+<p>Outra técnica bastante "show", é a possibilidade de dúplicar elementos apartir da sua forma original. Um exemplo bem objetivo é as nuvens do CsSocker, onde desenho um círculo e dúplico o mesmo para que as suas réplicas formem uma nuvem.</p>
+<p>Abaixo 3 simples passos para formar uma nuvem pequena:</p>
+<style type="text/css">
+    .circle {
+        background: #2e9fff;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        margin: 30px auto;
+    }
+</style>
+<div class="circle">
+</div>
+<center>**Figura 3:** Circulo
+</center>
+<p>Replicando com a propriedade box-shadow podemos chegar a uma nuvem amigável:</p>
+<style>
+    .shadow {
+        box-shadow: 63px -14px 0 #2e9fff;
+        -webkit-transform: translateX(-70px);
+        -moz-transform: translateX(-70px);
+        -ms-transform: translateX(-70px);
+        -o-transform: translateX(-70px);
+        transform: translateX(-70px);
+    }
+</style>
+<div class="circle shadow">
+</div>
+<center>**Figura 4:** Circulos formando uma nuvem
+</center>
+<br />
+<style>
+    .nuvem {
+        box-shadow:63px -14px 0 #2e9fff, 123px 0px 0 #2e9fff, 63px 10px 0 #2e9fff;
+        -webkit-transform: translateX(-70px);
+        -moz-transform: translateX(-70px);
+        -ms-transform: translateX(-70px);
+        -o-transform: translateX(-70px);
+        transform: translateX(-70px);
+    }
+</style>
+<div class="circle nuvem">
+</div>
+<center>**Figura 5:** Nuvem formada a partir de box-shadow
+</center>
+<blockquote>
+<p>Muitos elementos do CsSocker foram feitos a partir desta técnica de réplicação, como exemplo temos também as cercas do campo que estão por trás das barras.</p>
+</blockquote>
+<p>Um exemplo fantástico é a<a href="https://codepen.io/jaysalvat/pen/HaqBf"> monaliza em css</a>, que foi feito a partir de um conversor de imagens para css. Note que os traços gerados da pintura, foram todos criados por meio do <span>box-shadow</span></p>
+<p>Seguindo este conceito, podemos chegar a resultados incríveis... É só usar a imaginação!</p>
+<p>Sobre o CsSocker, eu ainda não terminei mas irei criar vários posts relacionados a ele e ao desenvolvimento de jogos com css ;)</p>
+<p><em>Fiquem ligados!! (y)</em></p></article><span class="disqus-comment-count" data-disqus-url="http://clovisdasilvaneto.github.io/box-shadow-e-suas-magicas">...</span><div id="disqus_thread"></div></section></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-59584480-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/box-shadow-e-suas-magicas";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-f5ec1ff06108d0c85bab.js"],"app":["/app-bdc7531044e81d007e46.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-2331e0112f992bdf669e.js"],"component---src-pages-index-js":["/component---src-pages-index-js-ea984bc30ad76f88069e.js"],"component---src-pages-mentorship-js":["/component---src-pages-mentorship-js-03b0e6235dbb20097609.js"],"component---src-pages-projects-js":["/component---src-pages-projects-js-01da40b0cd7502fa4d3c.js"],"component---src-pages-talks-and-cases-js":["/component---src-pages-talks-and-cases-js-24369f652f095212baf0.js"],"component---src-templates-blog-template-index-js":["/component---src-templates-blog-template-index-js-f071e0c970ae776bfd57.js"],"polyfills-dom":["/polyfills-dom-7c4627081c92a90b6686.js"],"polyfills-core-js":["/polyfills-core-js-eafbc8513cfc9ace16bd.js"]};/*]]>*/</script><script src="/polyfill-f5ec1ff06108d0c85bab.js" nomodule=""></script><script src="/component---src-templates-blog-template-index-js-f071e0c970ae776bfd57.js" async=""></script><script src="/f76269354c86574759d873a956369a62a6c0d497-d701e526deb2716967c8.js" async=""></script><script src="/commons-9adb930b4f4bf386a213.js" async=""></script><script src="/1bfc9850-45d2302bc0b697e33557.js" async=""></script><script src="/app-bdc7531044e81d007e46.js" async=""></script><script src="/framework-093277442ae50afb9478.js" async=""></script><script src="/webpack-runtime-936d433109bc997f0cfa.js" async=""></script></body></html>
