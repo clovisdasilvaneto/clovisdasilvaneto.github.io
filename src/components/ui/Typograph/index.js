@@ -15,7 +15,8 @@ const VARIANTS_MAPPER = {
     font-size: 2rem;
   `,
   h3: () => css`
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
   `,
   h4: () => css`
     font-size: 1rem;
