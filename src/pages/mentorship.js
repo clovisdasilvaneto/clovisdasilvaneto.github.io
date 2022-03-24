@@ -8,7 +8,6 @@ const Box = styled(Typograph)`
   border: solid 1px #cdcdcd;
   padding: 1rem;
   font-size: 1.3rem;
-  margin-top: 2rem;
   cursor: pointer;
   background: #000;
   color: #fff;
@@ -103,9 +102,9 @@ export default function Mentorship() {
         Primeiro selecione a descrição que melhor se encaixa com o seu perfil:
       </Typograph>
 
-      <Box paragraph onClick={handleOptionClick(options.iniciante)}>
+      <Box onClick={handleOptionClick(options.iniciante)}>
         Sou iniciante (Não sei o que é html ou conheço apenas o basico de HTML e
-        CSS)
+        CSS) - das <u>15:00 - 15:45</u>
       </Box>
 
       <MentorFrame
@@ -119,7 +118,8 @@ export default function Mentorship() {
       </MentorFrame>
 
       <Box paragraph onClick={handleOptionClick(options.jr)}>
-        Sou Júnior (Conheço bem HTML, CSS e JS, mas não sei o que é React)
+        Sou Júnior (Conheço bem HTML, CSS e JS, mas não sei o que é React) - das
+        <u>16:00 - 16:45</u>
       </Box>
 
       <MentorFrame
